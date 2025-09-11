@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruchit Dwara - Aspiring CS & IT Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .cursor-gradient {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(160, 100, 255, 0.4) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+            z-index: 9999;
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #58a6ff;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #58a6ff, #8a58ff, #ff58a6);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 6s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* New Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .animate-on-scroll.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .skill-card {
+            animation: popIn 0.5s ease-out;
+        }
+
+    </style>
+</head>
+<body class="bg-[#0d1117] text-[#c9d1d9] min-h-screen">
+
+    <!-- Cursor Effect -->
+    <div class="cursor-gradient"></div>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center py-16 animate-fadeIn">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 animated-gradient">
+                Ruchit Dwara
+            </h1>
+            <p class="text-lg md:text-2xl text-[#8b949e]">
+                Aspiring Computer Science & IT Student
+            </p>
+        </header>
+
+        <!-- About Me Section -->
+        <section id="about" class="mb-16 animate-on-scroll">
+            <h2 class="section-header">About Me</h2>
+            <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-12">
+                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#58a6ff] shadow-lg">
+                    <img src="C:\Users\ruchi\Downloads\resume photo.jpg" alt="Ruchit Dwara" class="w-full h-full object-cover round-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-[#161b22] rounded-3xl p-6 md:p-10 max-w-2xl text-center lg:text-left shadow-2xl transition-all duration-500 hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <p class="text-base md:text-lg leading-relaxed">
+                        I am a dynamic and motivated B.Tech Computer Science and IT student with a proven track record of academic excellence, strong leadership, and cross-cultural experience from my time in the United States. I'm passionate about statistical analysis, artificial intelligence, and programming (Java, Python, C). I excel in project-based learning and teamwork, with strong communication and people skills. I'm actively pursuing advanced knowledge in emerging technologies, always applying a structured and analytical approach to problem-solving.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-16 animate-on-scroll">
+            <h2 class="section-header">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="skill-card bg-[#161b22] rounded-2xl p-6 text-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Programming Languages</h3>
+                    <p class="text-[#8b949e]">C, Java, Python, HTML, CSS</p>
+                </div>
+                <div class="skill-card bg-[#161b22] rounded-2xl p-6 text-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Core Skills</h3>
+                    <p class="text-[#8b949e]">Team Collaboration, Leadership, Technical Writing, Time Management, Critical Thinking, Multitasking, Conflict Resolution, Utilizing AI Tools</p>
+                </div>
+                <div class="skill-card bg-[#161b22] rounded-2xl p-6 text-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Certifications</h3>
+                    <p class="text-[#8b949e]">
+                        <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/EGDY9RAJMPVS" target="_blank" class="text-[#58a6ff] hover:underline transition-colors duration-200 hover:text-white">Google AI Essentials</a>, 
+                        <a href="https://www.coursera.org/account/accomplishments/verify/8X30FTFINATI" target="_blank" class="text-[#58a6ff] hover:underline transition-colors duration-200 hover:text-white">Git and GitHub</a>
+                    </p>
+                </div>
+                <div class="skill-card bg-[#161b22] rounded-2xl p-6 text-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Interests</h3>
+                    <p class="text-[#8b949e]">Statistical Analysis, Artificial Intelligence, Database Management</p>
+                </div>
+                <div class="skill-card bg-[#161b22] rounded-2xl p-6 text-center shadow-lg transition-transform duration-300 hover:scale-105 hover:hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Education</h3>
+                    <p class="text-[#8b949e]">B.Tech CS & IT from KLH, International Baccalaureate from The Gaudium School</p>
+                </div>
+                <div class="skill-card bg-[#161b22] rounded-2xl p-6 text-center shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(88,166,255,0.7)]">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Contact</h3>
+                    <p class="text-[#8b949e]"><a href="tel:+917337331937" class="text-[#58a6ff] hover:underline transition-colors duration-200 hover:text-white">+91 7337331937</a></p>
+                    <p class="text-[#8b949e]"><a href="mailto:ruchit2003@gmail.com" class="text-[#58a6ff] hover:underline transition-colors duration-200 hover:text-white">ruchit2003@gmail.com</a></p>
+                    <a href="https://linkedin.com/in/ruchit-dwara-560210365/" target="_blank" class="text-[#58a6ff] hover:underline transition-colors duration-200 hover:text-white">LinkedIn</a> | <a href="https://github.com/ruchitdwara" target="_blank" class="text-[#58a6ff] hover:underline transition-colors duration-200 hover:text-white">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Custom Cursor Effect
+        const cursor = document.querySelector('.cursor-gradient');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('.animate-on-scroll');
+        const observerOptions = {
+            root: null,
+            threshold: 0.2,
+            rootMargin: "0px"
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
