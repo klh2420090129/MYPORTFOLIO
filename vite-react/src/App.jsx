@@ -155,7 +155,11 @@ function SectionHeader({ eyebrow, title }) {
 }
 
 function Chip({ children }) {
-  return <span className="inline-flex items-center justify-center rounded-full border border-blue-100 bg-[#eaf1ff] px-4 py-2 text-sm font-semibold text-[#23336b]">{children}</span>
+  return (
+    <span className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-100/80 bg-[#eaf1ff] px-3.5 py-1.5 text-sm font-semibold text-[#23336b] transition-all hover:-translate-y-0.5 hover:bg-[#dbeafe] hover:shadow-sm">
+      {children}
+    </span>
+  )
 }
 
 function OrgBadge({ label, tone = 'blue' }) {
