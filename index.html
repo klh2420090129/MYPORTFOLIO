@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruchit Dwara - Aspiring Cloud Solutions Engineer</title>
-    
+
     <!-- OpenGraph & LinkedIn Meta Tags -->
     <meta property="og:title" content="Ruchit Dwara - Aspiring Cloud Solutions Engineer">
-    <meta property="og:description" content="Portfolio of Ruchit Dwara - Azure AI Certified, B.Tech CSE & IT. Cloud Solutions, Infrastructure & Software Engineering.">
+    <meta property="og:description"
+        content="Portfolio of Ruchit Dwara - Azure AI Certified, B.Tech CSE & IT. Cloud Solutions, Infrastructure & Software Engineering.">
     <meta property="og:image" content="https://klh2420090129.github.io/MYPORTFOLIO/Updated%20Formal%20Pic.png">
     <meta property="og:url" content="https://klh2420090129.github.io/MYPORTFOLIO/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ruchit Dwara - Aspiring Cloud Solutions Engineer">
-    <meta name="twitter:description" content="Portfolio of Ruchit Dwara - Azure AI Certified, B.Tech CSE & IT. Cloud Solutions, Infrastructure & Software Engineering.">
+    <meta name="twitter:description"
+        content="Portfolio of Ruchit Dwara - Azure AI Certified, B.Tech CSE & IT. Cloud Solutions, Infrastructure & Software Engineering.">
     <meta name="twitter:image" content="https://klh2420090129.github.io/MYPORTFOLIO/Updated%20Formal%20Pic.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +33,72 @@
             --muted: #5b6475;
             --accent: #2563eb;
             --accent-2: #7c3aed;
+            --card-bg: rgba(255, 255, 255, 0.92);
+            --header-bg: rgba(255, 255, 255, 0.85);
+            --header-border: rgba(219, 234, 254, 0.8);
+            --mini-card-bg: #f7faff;
+            --chip-bg: #eaf1ff;
+            --chip-text: #23336b;
+            --text-heading: #0f172a;
         }
 
-        * { box-sizing: border-box; }
+        body.dark {
+            --bg: #0b0f19;
+            --bg-2: #111827;
+            --card: rgba(17, 24, 39, 0.92);
+            --card-border: rgba(59, 130, 246, 0.22);
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #60a5fa;
+            --accent-2: #a78bfa;
+            --header-bg: rgba(17, 24, 39, 0.85);
+            --header-border: rgba(55, 65, 81, 0.8);
+            --mini-card-bg: rgba(31, 41, 55, 0.7);
+            --chip-bg: rgba(30, 58, 138, 0.35);
+            --chip-text: #93c5fd;
+            --text-heading: #f8fafc;
+            color: var(--text);
+        }
 
-        html { scroll-behavior: smooth; }
+        body.dark .hero,
+        body.dark .section-card {
+            background: var(--card);
+            border-color: var(--card-border);
+        }
+
+        body.dark .mini-card {
+            background: var(--mini-card-bg);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        body.dark header {
+            background: var(--header-bg) !important;
+            border-color: var(--header-border) !important;
+        }
+
+        body.dark .section-title,
+        body.dark h1,
+        body.dark h2,
+        body.dark h3 {
+            color: #f8fafc !important;
+        }
+
+        body.dark p,
+        body.dark li {
+            color: #cbd5e1 !important;
+        }
+
+        body.dark .muted {
+            color: #94a3b8 !important;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -45,6 +109,7 @@
                 linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
             overflow-x: hidden;
             cursor: none;
+            transition: background 0.3s ease, color 0.3s ease;
         }
 
         body::before {
@@ -84,7 +149,8 @@
             padding: 24px 18px 48px;
         }
 
-        .hero, .section-card {
+        .hero,
+        .section-card {
             background: var(--card);
             border: 1px solid var(--card-border);
             box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
@@ -92,8 +158,13 @@
             border-radius: 32px;
         }
 
-        .hero { padding: 34px; }
-        .section-card { padding: 30px; }
+        .hero {
+            padding: 34px;
+        }
+
+        .section-card {
+            padding: 30px;
+        }
 
         .section-title {
             font-size: clamp(1.7rem, 2vw, 2.5rem);
@@ -204,7 +275,9 @@
             gap: 16px;
         }
 
-        .muted { color: var(--muted); }
+        .muted {
+            color: var(--muted);
+        }
 
         .mini-card {
             background: #f7faff;
@@ -257,9 +330,20 @@
             transform: scale(1.06);
         }
 
-        .org-mark.blue { background: #e8f1ff; color: #1d4ed8; }
-        .org-mark.slate { background: #edf2f7; color: #334155; }
-        .org-mark.green { background: #ecfdf5; color: #047857; }
+        .org-mark.blue {
+            background: #e8f1ff;
+            color: #1d4ed8;
+        }
+
+        .org-mark.slate {
+            background: #edf2f7;
+            color: #334155;
+        }
+
+        .org-mark.green {
+            background: #ecfdf5;
+            color: #047857;
+        }
 
         .card-actions {
             display: flex;
@@ -274,8 +358,15 @@
         }
 
         @keyframes scaleUp {
-            from { transform: scale(0.95); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .animate-scale-up {
@@ -283,18 +374,39 @@
         }
 
         @media (max-width: 900px) {
-            .grid-two, .grid-three, .grid-four { grid-template-columns: 1fr; }
-            .hero { padding: 24px; }
+
+            .grid-two,
+            .grid-three,
+            .grid-four {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 24px;
+            }
         }
 
         @media (max-width: 640px) {
-            body { cursor: auto; }
-            .cursor-gradient { display: none; }
-            .shell { padding: 18px 14px 34px; }
-            .avatar { width: 140px; height: 140px; }
+            body {
+                cursor: auto;
+            }
+
+            .cursor-gradient {
+                display: none;
+            }
+
+            .shell {
+                padding: 18px 14px 34px;
+            }
+
+            .avatar {
+                width: 140px;
+                height: 140px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="cursor-gradient"></div>
 
@@ -302,8 +414,10 @@
     <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-blue-100/80 shadow-sm transition-all">
         <div class="max-w-[1160px] mx-auto px-4 py-3 flex items-center justify-between">
             <a href="#" class="font-extrabold text-lg text-[#1d4ed8] flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full border-2 border-blue-600 overflow-hidden bg-white flex-shrink-0 shadow-sm">
-                    <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara" class="w-full h-full object-cover" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
+                <div
+                    class="w-9 h-9 rounded-full border-2 border-blue-600 overflow-hidden bg-white flex-shrink-0 shadow-sm">
+                    <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara" class="w-full h-full object-cover"
+                        onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
                 </div>
                 <span class="tracking-tight font-bold text-[#0f172a]">Ruchit Dwara</span>
             </a>
@@ -316,10 +430,24 @@
                 <a href="#certifications" class="hover:text-[#1d4ed8] transition-colors">Certifications</a>
             </nav>
             <div class="flex items-center gap-2">
-                <a href="mailto:ruchit2003@gmail.com" onclick="copyEmail()" class="inline-flex items-center gap-2 rounded-full bg-[#1d4ed8] px-4 py-2 text-xs font-semibold text-white hover:bg-[#1e40af] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                        <polyline points="22,6 12,13 2,6"/>
+                <button onclick="toggleDarkMode()" id="themeToggleBtn"
+                    class="inline-flex items-center gap-1.5 rounded-full bg-[#eff5ff] dark:bg-slate-800 px-3 py-1.5 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-all border border-blue-200/80 dark:border-slate-700 cursor-pointer" title="Toggle Light/Dark Theme">
+                    <span id="themeToggleText">🌞 Light</span>
+                </button>
+                <button onclick="openCertModal('Ruchit Dwara - Resume', './Resume_Final.pdf')"
+                    class="inline-flex items-center gap-1.5 rounded-full bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-1.5 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-all border border-blue-200/80 dark:border-slate-700 cursor-pointer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    <span>View Resume</span>
+                </button>
+                <a href="mailto:ruchit2003@gmail.com" onclick="copyEmail()"
+                    class="inline-flex items-center gap-2 rounded-full bg-[#1d4ed8] px-4 py-1.5 text-xs font-semibold text-white hover:bg-[#1e40af] transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
                     </svg>
                     <span>Get in Touch</span>
                 </a>
@@ -336,38 +464,53 @@
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1d4ed8] leading-tight">
                         Ruchit Dwara
                     </h1>
-                    <p class="mt-4 text-lg md:text-xl text-[#334155] font-medium leading-relaxed max-w-2xl">
-                        B.Tech CS&IT Student | Cloud Computing, Web Development & AI Enthusiast
-                    </p>
-                    <p class="mt-5 text-base md:text-lg muted leading-relaxed max-w-3xl">
-                        I am a Computer Science undergraduate passionate about using technology to solve real-world problems. Rather than focusing solely on algorithms, I enjoy understanding how systems, people, and businesses interact and how technology can improve the way organizations operate.
+                    <div class="mt-2 text-lg md:text-xl font-bold text-[#1d4ed8] dark:text-blue-400 min-h-[30px] flex items-center">
+                        <span id="typingText" class="border-r-2 border-blue-600 pr-1"></span>
+                    </div>
+                    <p class="mt-3 text-base md:text-lg muted leading-relaxed max-w-3xl">
+                        I am a Computer Science undergraduate passionate about using technology to solve real-world
+                        problems. Rather than focusing solely on algorithms, I enjoy understanding how systems, people,
+                        and businesses interact and how technology can improve the way organizations operate.
                     </p>
 
                     <div class="mt-6 flex flex-wrap gap-3">
+                        <button onclick="openCertModal('Ruchit Dwara - Resume', './Resume_Final.pdf')" class="soft-pill">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                            <span>View Resume 👁️</span>
+                        </button>
                         <a href="./Resume_Final.pdf" download="Ruchit_Dwara_Resume_2026.pdf" class="soft-pill">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7 10 12 15 17 10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
                             <span>Download Resume</span>
                         </a>
                         <button onclick="copyEmail()" class="soft-pill">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
                             </svg>
                             <span>Copy Email</span>
                         </button>
-                        <a href="https://www.linkedin.com/in/ruchit-dwara-560210365/" target="_blank" rel="noopener noreferrer" class="soft-pill">
+                        <a href="https://www.linkedin.com/in/ruchit-dwara-560210365/" target="_blank"
+                            rel="noopener noreferrer" class="soft-pill">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                             </svg>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="soft-pill">
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer"
+                            class="soft-pill">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                             <span>GitHub</span>
                         </a>
@@ -376,26 +519,31 @@
 
                 <div class="flex justify-center md:justify-end">
                     <div class="avatar">
-                        <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
+                        <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara"
+                            onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
                     </div>
                 </div>
             </div>
 
             <!-- Recruiter Key Impact Stats Bar -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 pt-6 border-t border-blue-100/80">
-                <div class="mini-card text-center p-4 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 border-blue-100 hover-lift">
+                <div
+                    class="mini-card text-center p-4 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 border-blue-100 hover-lift">
                     <p class="text-3xl font-black text-[#1d4ed8]">3+</p>
                     <p class="text-xs font-semibold text-[#5b6475] mt-1">Industry Certifications</p>
                 </div>
-                <div class="mini-card text-center p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 border-emerald-100 hover-lift">
+                <div
+                    class="mini-card text-center p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 border-emerald-100 hover-lift">
                     <p class="text-3xl font-black text-[#047857]">2nd Prize</p>
                     <p class="text-xs font-semibold text-[#5b6475] mt-1">Innovation Competition</p>
                 </div>
-                <div class="mini-card text-center p-4 bg-gradient-to-br from-purple-50/80 to-indigo-50/40 border-purple-100 hover-lift">
+                <div
+                    class="mini-card text-center p-4 bg-gradient-to-br from-purple-50/80 to-indigo-50/40 border-purple-100 hover-lift">
                     <p class="text-3xl font-black text-[#7c3aed]">150+</p>
                     <p class="text-xs font-semibold text-[#5b6475] mt-1">Event Participants Led</p>
                 </div>
-                <div class="mini-card text-center p-4 bg-gradient-to-br from-sky-50/80 to-blue-50/40 border-sky-100 hover-lift">
+                <div
+                    class="mini-card text-center p-4 bg-gradient-to-br from-sky-50/80 to-blue-50/40 border-sky-100 hover-lift">
                     <p class="text-3xl font-black text-[#0284c7]">500+</p>
                     <p class="text-xs font-semibold text-[#5b6475] mt-1">GitHub Commits</p>
                 </div>
@@ -409,10 +557,15 @@
                 <h2 class="section-title">About Me</h2>
             </div>
             <p class="text-[#334155] leading-relaxed text-base md:text-lg">
-                My interests lie in cloud computing, enterprise software, and infrastructure, with a particular focus on Microsoft Azure and practical, scalable solutions. I enjoy bridging the gap between technical concepts and business needs, combining strong communication skills with hands-on experience in web development and system design.
+                My interests lie in cloud computing, enterprise software, and infrastructure, with a particular focus on
+                Microsoft Azure and practical, scalable solutions. I enjoy bridging the gap between technical concepts
+                and business needs, combining strong communication skills with hands-on experience in web development
+                and system design.
             </p>
             <p class="mt-4 text-[#334155] leading-relaxed text-base md:text-lg">
-                Currently, I am building projects that address real organizational challenges while continuously expanding my knowledge of cloud technologies, networking, and enterprise systems. In the long term, I aspire to work at the intersection of technology, strategy, and business.
+                Currently, I am building projects that address real organizational challenges while continuously
+                expanding my knowledge of cloud technologies, networking, and enterprise systems. In the long term, I
+                aspire to work at the intersection of technology, strategy, and business.
             </p>
         </section>
 
@@ -423,45 +576,56 @@
                 <h2 class="section-title">Academic Background</h2>
             </div>
             <div class="org-row mb-6">
-                <a href="https://klh.edu.in/" target="_blank" rel="noopener noreferrer" class="org-badge" title="Visit KL University Website">
+                <a href="https://klh.edu.in/" target="_blank" rel="noopener noreferrer" class="org-badge"
+                    title="Visit KL University Website">
                     <span class="org-mark blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Koneru Lakshmaiah Education Foundation ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Koneru
+                            Lakshmaiah Education Foundation ↗</p>
                         <p class="text-xs text-[#5b6475]">B.Tech in CSE & IT</p>
                     </div>
                 </a>
-                <a href="https://www.thegaudium.com/" target="_blank" rel="noopener noreferrer" class="org-badge" title="Visit The Gaudium School Website">
+                <a href="https://www.thegaudium.com/" target="_blank" rel="noopener noreferrer" class="org-badge"
+                    title="Visit The Gaudium School Website">
                     <span class="org-mark slate">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">The Gaudium School ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">The
+                            Gaudium School ↗</p>
                         <p class="text-xs text-[#5b6475]">IB Diploma Programme</p>
                     </div>
                 </a>
             </div>
             <div class="grid-two">
                 <div class="mini-card card-shadow hover-lift">
-                    <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education Foundation (KLH)</p>
-                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">Bachelor of Technology, Computer Science & Information Technology</h3>
+                    <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education
+                        Foundation (KLH)</p>
+                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">Bachelor of Technology, Computer Science &
+                        Information Technology</h3>
                     <p class="muted mt-1">Hyderabad, India | Expected Nov 2028</p>
                     <ul class="mt-4 space-y-2 text-[#334155] leading-relaxed">
-                        <li>Relevant coursework: Operating Systems, Databases, Computer Networks, Software Engineering, Enterprise Web Technologies</li>
+                        <li>Relevant coursework: Operating Systems, Databases, Computer Networks, Software Engineering,
+                            Enterprise Web Technologies</li>
                         <li>Exploring cloud computing and cybersecurity through electives and independent study</li>
                     </ul>
                 </div>
                 <div class="mini-card card-shadow hover-lift">
                     <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">The Gaudium School</p>
-                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">International Baccalaureate (IB) Diploma Programme</h3>
+                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">International Baccalaureate (IB) Diploma Programme
+                    </h3>
                     <p class="muted mt-1">Hyderabad, India</p>
-                    <p class="mt-4 text-[#334155] leading-relaxed">Built research, analytical reasoning, and time-management skills through the IB Extended Essay and Theory of Knowledge coursework.</p>
+                    <p class="mt-4 text-[#334155] leading-relaxed">Built research, analytical reasoning, and
+                        time-management skills through the IB Extended Essay and Theory of Knowledge coursework.</p>
                 </div>
             </div>
         </section>
@@ -476,10 +640,10 @@
                 <a href="#certifications" class="org-badge" title="View Azure & Cloud Certifications">
                     <span class="org-mark blue">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M1 3h10v10H1z" fill="#F25022"/>
-                            <path d="M13 3h10v10H13z" fill="#7FBA00"/>
-                            <path d="M1 15h10v10H1z" fill="#00A4EF"/>
-                            <path d="M13 15h10v10H1z" fill="#FFB900"/>
+                            <path d="M1 3h10v10H1z" fill="#F25022" />
+                            <path d="M13 3h10v10H13z" fill="#7FBA00" />
+                            <path d="M1 15h10v10H1z" fill="#00A4EF" />
+                            <path d="M13 15h10v10H1z" fill="#FFB900" />
                         </svg>
                     </span>
                     <div>
@@ -489,9 +653,10 @@
                 </a>
                 <a href="#projects" class="org-badge" title="View Web Development Projects">
                     <span class="org-mark slate">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </span>
                     <div>
@@ -499,187 +664,266 @@
                         <p class="text-xs text-[#5b6475]">Frontend and backend implementation</p>
                     </div>
                 </a>
-            <div class="grid-two">
-                <div class="mini-card">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Programming Languages</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-4 h-4 object-contain">
-                                <span>Java</span>
+                <div class="grid-two">
+                    <div class="mini-card">
+                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Programming Languages</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                        alt="Java" class="w-4 h-4 object-contain">
+                                    <span>Java</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Academic Coursework & OOP</span>
                             </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Academic Coursework & OOP</span>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                        alt="Python" class="w-4 h-4 object-contain">
+                                    <span>Python</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Data Science & Automation</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
+                                        alt="C" class="w-4 h-4 object-contain">
+                                    <span>C</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Systems & Data Structures</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                                        alt="SQL" class="w-4 h-4 object-contain">
+                                    <span>SQL</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Faculty Database &
+                                    Queries</span>
+                            </div>
                         </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-4 h-4 object-contain">
-                                <span>Python</span>
+                    </div>
+                    <div class="mini-card">
+                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Web Development & Backend</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                        alt="React.js" class="w-4 h-4 object-contain">
+                                    <span>React.js</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Portfolio website</span>
                             </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Data Science & Automation</span>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                        alt="Node.js" class="w-4 h-4 object-contain">
+                                    <span>Node.js</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Authentication backend</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                                        alt="Express.js" class="w-4 h-4 object-contain">
+                                    <span>Express.js</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">REST API services</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#2563eb">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                    </svg>
+                                    <span>REST APIs</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Backend integration</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#000000">
+                                        <path
+                                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.5 1.1 2.5 2.5 0 .9-.5 1.7-1.2 2.1l1.7 4.4h-6l1.7-4.4c-.7-.4-1.2-1.2-1.2-2.1C9.5 8.1 10.6 7 12 7z" />
+                                    </svg>
+                                    <span>JWT Auth</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Secure user sessions</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                                        alt="PostgreSQL" class="w-4 h-4 object-contain">
+                                    <span>MySQL & PostgreSQL</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Faculty database</span>
+                            </div>
                         </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="w-4 h-4 object-contain">
-                                <span>C</span>
+                    </div>
+                    <div class="mini-card">
+                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">AI / ML & Automation</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED">
+                                        <path
+                                            d="M12 2l2.4 7.2L21.6 11.6l-7.2 2.4L12 21.2l-2.4-7.2L2.4 11.6l7.2-2.4L12 2z" />
+                                    </svg>
+                                    <span>Generative AI</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">NVIDIA Cert & LLM
+                                    Workflows</span>
                             </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Systems & Data Structures</span>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                        alt="GitHub Copilot" class="w-4 h-4 object-contain">
+                                    <span>GitHub Copilot</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">AI Pair Programming</span>
+                            </div>
                         </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="w-4 h-4 object-contain">
-                                <span>SQL</span>
+                    </div>
+                    <div class="mini-card">
+                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Tools & Platforms</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                        alt="Git" class="w-4 h-4 object-contain">
+                                    <span>Git</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Version Control &
+                                    Branching</span>
                             </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Faculty Database & Queries</span>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                        alt="GitHub" class="w-4 h-4 object-contain">
+                                    <span>GitHub</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Repository Management</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                                        alt="Postman" class="w-4 h-4 object-contain">
+                                    <span>Postman</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">API Testing & Validation</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                        alt="VS Code" class="w-4 h-4 object-contain">
+                                    <span>VS Code</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Primary IDE & Extensions</span>
+                            </div>
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5 sm:col-span-2 sm:max-w-[50%] sm:mx-auto w-full">
+                                <div class="flex items-center gap-2 font-semibold">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                                        alt="Linux" class="w-4 h-4 object-contain">
+                                    <span>Linux</span>
+                                </div>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">OS & Shell Commands</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mini-card md:col-span-2">
+                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Cloud & Infrastructure</h3>
+                        <div class="flex flex-col gap-2.5">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                                <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                    <div class="flex items-center gap-2 font-semibold">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+                                            alt="Microsoft Azure" class="w-4 h-4 object-contain">
+                                        <span>Microsoft Azure</span>
+                                    </div>
+                                    <span class="text-[0.73rem] text-[#5b6475] font-normal">Azure AI-900 Certified</span>
+                                </div>
+                                <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                    <div class="flex items-center gap-2 font-semibold">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                                            alt="AWS" class="w-4 h-4 object-contain">
+                                        <span>AWS (Foundational)</span>
+                                    </div>
+                                    <span class="text-[0.73rem] text-[#5b6475] font-normal">Cloud Practitioner Core</span>
+                                </div>
+                                <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                    <div class="flex items-center gap-2 font-semibold">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#2563eb">
+                                            <circle cx="12" cy="12" r="9" stroke="#2563eb" stroke-width="2" fill="none" />
+                                            <path d="M3.6 9h16.8M3.6 15h16.8" stroke="#2563eb" stroke-width="2" />
+                                            <path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z" stroke="#2563eb"
+                                                stroke-width="2" fill="none" />
+                                        </svg>
+                                        <span>Networking Fundamentals</span>
+                                    </div>
+                                    <span class="text-[0.73rem] text-[#5b6475] font-normal">HTTP, DNS & VNet Routing</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-2xl mx-auto w-full">
+                                <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                    <div class="flex items-center gap-2 font-semibold">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED">
+                                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                                                stroke="#7C3AED" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" fill="none" />
+                                        </svg>
+                                        <span>System Design</span>
+                                    </div>
+                                    <span class="text-[0.73rem] text-[#5b6475] font-normal">Scalable App Architecture</span>
+                                </div>
+                                <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
+                                    <div class="flex items-center gap-2 font-semibold">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0f172a">
+                                            <path
+                                                d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5m-4 0h4"
+                                                stroke="#0f172a" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" fill="none" />
+                                        </svg>
+                                        <span>Enterprise Software</span>
+                                    </div>
+                                    <span class="text-[0.73rem] text-[#5b6475] font-normal">Business Tech Integration</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="mini-card">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Web Development & Backend</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js" class="w-4 h-4 object-contain">
-                                <span>React.js</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Portfolio website</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="w-4 h-4 object-contain">
-                                <span>Node.js</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Authentication backend</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" class="w-4 h-4 object-contain">
-                                <span>Express.js</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">REST API services</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#2563eb"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                                <span>REST APIs</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Backend integration</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#000000"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.5 1.1 2.5 2.5 0 .9-.5 1.7-1.2 2.1l1.7 4.4h-6l1.7-4.4c-.7-.4-1.2-1.2-1.2-2.1C9.5 8.1 10.6 7 12 7z"/></svg>
-                                <span>JWT Auth</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Secure user sessions</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="w-4 h-4 object-contain">
-                                <span>MySQL & PostgreSQL</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Faculty database</span>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <!-- GitHub Statistics Section -->
+        <section id="github-stats" class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">GitHub Activity</div>
+                <h2 class="section-title">GitHub Statistics & Impact</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="mini-card text-center p-6 hover-lift border-blue-100 dark:border-slate-800">
+                    <p class="text-4xl font-black text-[#1d4ed8] dark:text-blue-400">500+</p>
+                    <p class="text-sm font-semibold text-[#0f172a] dark:text-white mt-2">Total Contributions & Commits</p>
+                    <p class="text-xs text-[#5b6475] dark:text-slate-400 mt-1">Active Git workflow & daily progress</p>
                 </div>
-                <div class="mini-card">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">AI / ML & Automation</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2l2.4 7.2L21.6 11.6l-7.2 2.4L12 21.2l-2.4-7.2L2.4 11.6l7.2-2.4L12 2z"/></svg>
-                                <span>Generative AI</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">NVIDIA Cert & LLM Workflows</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub Copilot" class="w-4 h-4 object-contain">
-                                <span>GitHub Copilot</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">AI Pair Programming</span>
-                        </div>
-                    </div>
+                <div class="mini-card text-center p-6 hover-lift border-emerald-100 dark:border-slate-800">
+                    <p class="text-4xl font-black text-[#047857] dark:text-emerald-400">12+</p>
+                    <p class="text-sm font-semibold text-[#0f172a] dark:text-white mt-2">Repositories & Projects</p>
+                    <p class="text-xs text-[#5b6475] dark:text-slate-400 mt-1">Full-stack, web & cloud repos</p>
                 </div>
-                <div class="mini-card">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Tools & Platforms</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-4 h-4 object-contain">
-                                <span>Git</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Version Control & Branching</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-4 h-4 object-contain">
-                                <span>GitHub</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Repository Management</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" class="w-4 h-4 object-contain">
-                                <span>Postman</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">API Testing & Validation</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="w-4 h-4 object-contain">
-                                <span>VS Code</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Primary IDE & Extensions</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="w-4 h-4 object-contain">
-                                <span>Linux</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">OS & Shell Commands</span>
-                        </div>
-                    </div>
+                <div class="mini-card text-center p-6 hover-lift border-purple-100 dark:border-slate-800">
+                    <p class="text-4xl font-black text-[#7c3aed] dark:text-purple-400">5+</p>
+                    <p class="text-sm font-semibold text-[#0f172a] dark:text-white mt-2">Languages & Frameworks</p>
+                    <p class="text-xs text-[#5b6475] dark:text-slate-400 mt-1">Java, Python, JS, SQL, React</p>
                 </div>
-                <div class="mini-card md:col-span-2">
-                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Cloud & Infrastructure</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Microsoft Azure" class="w-4 h-4 object-contain">
-                                <span>Microsoft Azure</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Azure AI-900 Certified</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="w-4 h-4 object-contain">
-                                <span>AWS (Foundational)</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Cloud Practitioner Core</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#2563eb"><circle cx="12" cy="12" r="9" stroke="#2563eb" stroke-width="2" fill="none"/><path d="M3.6 9h16.8M3.6 15h16.8" stroke="#2563eb" stroke-width="2"/><path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z" stroke="#2563eb" stroke-width="2" fill="none"/></svg>
-                                <span>Networking Fundamentals</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">HTTP, DNS & VNet Routing</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                                <span>System Design</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Scalable App Architecture</span>
-                        </div>
-                        <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
-                            <div class="flex items-center gap-2 font-semibold">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0f172a"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5m-4 0h4" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                                <span>Enterprise Software</span>
-                            </div>
-                            <span class="text-[0.73rem] text-[#5b6475] font-normal">Business Tech Integration</span>
-                        </div>
-                    </div>
-                </div>
-            </div></div>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="soft-pill">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    <span>Explore Full GitHub Profile (klh2420090129) ↗</span>
+                </a>
+            </div>
         </section>
 
         <!-- Experience Section -->
@@ -689,15 +933,19 @@
                 <h2 class="section-title">Experience</h2>
             </div>
             <div class="org-row mb-6">
-                <button onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')" class="org-badge" title="Preview Pinnacle Labs Internship Certificate PDF">
+                <button
+                    onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')"
+                    class="org-badge" title="Preview Pinnacle Labs Internship Certificate PDF">
                     <span class="org-mark green">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">Pinnacle Labs 🔍</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">Pinnacle
+                            Labs 🔍</p>
                         <p class="text-xs text-[#5b6475]">Web Development Internship Certificate</p>
                     </div>
                 </button>
@@ -709,14 +957,18 @@
                         <p class="muted mt-1">Virtual Internship | June 1, 2026 - July 1, 2026</p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors cursor-pointer">
+                        <button
+                            onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors cursor-pointer">
                             <span>Preview</span>
                         </button>
-                        <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors" href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7 10 12 15 17 10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
+                        <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors"
+                            href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
                             <span>Download PDF</span>
                         </a>
@@ -738,29 +990,34 @@
                 <h2 class="section-title">Projects</h2>
             </div>
             <div class="org-row mb-6">
-                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="org-badge" title="View Projects on GitHub">
+                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="org-badge"
+                    title="View Projects on GitHub">
                     <span class="org-mark blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"/>
-                            <polyline points="8 6 2 12 8 18"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Applied Systems ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Applied
+                            Systems ↗</p>
                         <p class="text-xs text-[#5b6475]">Full-stack & cloud projects</p>
                     </div>
                 </a>
-                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="org-badge" title="View Business Value Projects on GitHub">
+                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="org-badge"
+                    title="View Business Value Projects on GitHub">
                     <span class="org-mark slate">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M1 3h10v10H1z" fill="#F25022"/>
-                            <path d="M13 3h10v10H13z" fill="#7FBA00"/>
-                            <path d="M1 15h10v10H1z" fill="#00A4EF"/>
-                            <path d="M13 15h10v10H1z" fill="#FFB900"/>
+                            <path d="M1 3h10v10H1z" fill="#F25022" />
+                            <path d="M13 3h10v10H13z" fill="#7FBA00" />
+                            <path d="M1 15h10v10H1z" fill="#00A4EF" />
+                            <path d="M13 15h10v10H1z" fill="#FFB900" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Business Value ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Business
+                            Value ↗</p>
                         <p class="text-xs text-[#5b6475]">Built for practical impact</p>
                     </div>
                 </a>
@@ -769,16 +1026,21 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <h3 class="text-xl font-bold text-[#0f172a]">Faculty Student Management System</h3>
-                        <p class="muted mt-2">A full-stack platform to streamline student, faculty, and academic management with a secure and user-friendly interface.</p>
+                        <p class="muted mt-2">A full-stack platform to streamline student, faculty, and academic
+                            management with a secure and user-friendly interface.</p>
                         <p class="mt-4 text-[#334155]"><strong>User Roles:</strong> Student, Faculty, Admin</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">Vercel</span>
+                            <span class="chip">HTML</span><span class="chip">CSS</span><span
+                                class="chip">JavaScript</span><span class="chip">MySQL</span><span
+                                class="chip">Vercel</span>
                         </div>
                     </div>
                     <div class="card-actions border-t border-blue-50 pt-4 mt-6">
-                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                             <span>View Code Repository ↗</span>
                         </a>
@@ -787,15 +1049,19 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <h3 class="text-xl font-bold text-[#0f172a]">Scheme Finder</h3>
-                        <p class="muted mt-2">A web platform that helps users discover government schemes based on eligibility, with an emphasis on simple navigation and practical usefulness.</p>
+                        <p class="muted mt-2">A web platform that helps users discover government schemes based on
+                            eligibility, with an emphasis on simple navigation and practical usefulness.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Eligibility Filters</span>
+                            <span class="chip">JavaScript</span><span class="chip">HTML</span><span
+                                class="chip">CSS</span><span class="chip">Eligibility Filters</span>
                         </div>
                     </div>
                     <div class="card-actions border-t border-blue-50 pt-4 mt-6">
-                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                             <span>View Code Repository ↗</span>
                         </a>
@@ -804,23 +1070,29 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <h3 class="text-xl font-bold text-[#0f172a]">Portfolio Website</h3>
-                        <p class="muted mt-2">A clean, responsive personal site built to present my background, projects, and achievements in a professional format.</p>
+                        <p class="muted mt-2">A clean, responsive personal site built to present my background,
+                            projects, and achievements in a professional format.</p>
                         <div class="mt-4 flex flex-wrap gap-2">
-                            <span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Vite</span>
+                            <span class="chip">React</span><span class="chip">Tailwind</span><span
+                                class="chip">Vite</span>
                         </div>
                     </div>
                     <div class="card-actions border-t border-blue-50 pt-4 mt-6">
-                        <a href="https://klh2420090129.github.io/MYPORTFOLIO/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
+                        <a href="https://klh2420090129.github.io/MYPORTFOLIO/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
                             </svg>
                             <span>Live Site ↗</span>
                         </a>
-                        <a href="https://github.com/klh2420090129/MYPORTFOLIO" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <a href="https://github.com/klh2420090129/MYPORTFOLIO" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
                             <span>GitHub Repo ↗</span>
                         </a>
@@ -837,7 +1109,9 @@
             </div>
             <div class="mini-card card-shadow hover-lift">
                 <p class="text-[#334155] leading-relaxed">
-                    <strong>2nd Prize (Runner up)</strong> - College-level innovation competition at KL University for developing <strong>Scheme Finder</strong>, a web platform that helps users discover government schemes based on eligibility.
+                    <strong>2nd Prize (Runner up)</strong> - College-level innovation competition at KL University for
+                    developing <strong>Scheme Finder</strong>, a web platform that helps users discover government
+                    schemes based on eligibility.
                 </p>
             </div>
         </section>
@@ -850,12 +1124,16 @@
             </div>
             <div class="grid-two">
                 <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">Event Organizer - Blind Coding Challenge | KL University</h3>
-                    <p class="mt-3 text-[#334155] leading-relaxed">Organized a Blind Coding competition with 150+ participants, coordinating the event and ensuring successful execution from start to finish.</p>
+                    <h3 class="text-xl font-bold text-[#0f172a]">Event Organizer - Blind Coding Challenge | KL
+                        University</h3>
+                    <p class="mt-3 text-[#334155] leading-relaxed">Organized a Blind Coding competition with 150+
+                        participants, coordinating the event and ensuring successful execution from start to finish.</p>
                 </div>
                 <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">Student Coordinator - Internship Pitch 2026 | KL University</h3>
-                    <p class="mt-3 text-[#334155] leading-relaxed">Coordinated the Internship Pitch 2026 event, managing registrations, participant coordination, and smooth competition execution.</p>
+                    <h3 class="text-xl font-bold text-[#0f172a]">Student Coordinator - Internship Pitch 2026 | KL
+                        University</h3>
+                    <p class="mt-3 text-[#334155] leading-relaxed">Coordinated the Internship Pitch 2026 event, managing
+                        registrations, participant coordination, and smooth competition execution.</p>
                 </div>
             </div>
         </section>
@@ -867,40 +1145,51 @@
                 <h2 class="section-title">Certifications</h2>
             </div>
             <div class="org-row mb-6">
-                <button onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')" class="org-badge" title="Preview Microsoft Azure Certificate PDF">
+                <button
+                    onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')"
+                    class="org-badge" title="Preview Microsoft Azure Certificate PDF">
                     <span class="org-mark blue">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M1 3h10v10H1z" fill="#F25022"/>
-                            <path d="M13 3h10v10H13z" fill="#7FBA00"/>
-                            <path d="M1 15h10v10H1z" fill="#00A4EF"/>
-                            <path d="M13 15h10v10H1z" fill="#FFB900"/>
+                            <path d="M1 3h10v10H1z" fill="#F25022" />
+                            <path d="M13 3h10v10H13z" fill="#7FBA00" />
+                            <path d="M1 15h10v10H1z" fill="#00A4EF" />
+                            <path d="M13 15h10v10H1z" fill="#FFB900" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Microsoft Azure 🔍</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Microsoft
+                            Azure 🔍</p>
                         <p class="text-xs text-[#5b6475]">Azure AI Fundamentals Certificate</p>
                     </div>
                 </button>
-                <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener noreferrer" class="org-badge" title="View AWS Cloud Practitioner Information">
+                <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
+                    rel="noopener noreferrer" class="org-badge" title="View AWS Cloud Practitioner Information">
                     <span class="org-mark slate">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
-                            <path d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z"/>
-                            <path d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z"/>
+                            <path
+                                d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z" />
+                            <path
+                                d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#334155] transition-colors">Amazon Web Services ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#334155] transition-colors">Amazon
+                            Web Services ↗</p>
                         <p class="text-xs text-[#5b6475]">Cloud Practitioner</p>
                     </div>
                 </a>
-                <button onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')" class="org-badge" title="Preview NVIDIA Certificate PDF">
+                <button
+                    onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
+                    class="org-badge" title="Preview NVIDIA Certificate PDF">
                     <span class="org-mark green">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z"/>
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z" />
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">NVIDIA 🔍</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">NVIDIA 🔍
+                        </p>
                         <p class="text-xs text-[#5b6475]">Accelerated Data Science Certificate</p>
                     </div>
                 </button>
@@ -909,12 +1198,15 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center gap-3">
-                            <button onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')" class="org-mark blue hover:scale-105 transition-transform cursor-pointer" title="Preview Microsoft Azure Certificate">
+                            <button
+                                onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')"
+                                class="org-mark blue hover:scale-105 transition-transform cursor-pointer"
+                                title="Preview Microsoft Azure Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M1 3h10v10H1z" fill="#F25022"/>
-                                    <path d="M13 3h10v10H13z" fill="#7FBA00"/>
-                                    <path d="M1 15h10v10H1z" fill="#00A4EF"/>
-                                    <path d="M13 15h10v10H1z" fill="#FFB900"/>
+                                    <path d="M1 3h10v10H1z" fill="#F25022" />
+                                    <path d="M13 3h10v10H13z" fill="#7FBA00" />
+                                    <path d="M1 15h10v10H1z" fill="#00A4EF" />
+                                    <path d="M13 15h10v10H1z" fill="#FFB900" />
                                 </svg>
                             </button>
                             <h3 class="text-xl font-bold text-[#0f172a]">Microsoft Certified: Azure AI Fundamentals</h3>
@@ -922,11 +1214,19 @@
                         <p class="muted mt-3 text-sm">AI-900</p>
                     </div>
                     <div class="mt-6 flex flex-col gap-2">
-                        <button onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1d4ed8] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1e40af] transition-colors shadow-sm cursor-pointer">
+                        <button
+                            onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1d4ed8] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1e40af] transition-colors shadow-sm cursor-pointer">
                             <span>🔍 Preview Certificate</span>
                         </button>
-                        <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
                             <span>Download PDF</span>
                         </a>
                     </div>
@@ -934,10 +1234,14 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center gap-3">
-                            <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener noreferrer" class="org-mark slate hover:scale-105 transition-transform" title="AWS Cloud Practitioner Information">
+                            <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
+                                rel="noopener noreferrer" class="org-mark slate hover:scale-105 transition-transform"
+                                title="AWS Cloud Practitioner Information">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
-                                    <path d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z"/>
-                                    <path d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z"/>
+                                    <path
+                                        d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z" />
+                                    <path
+                                        d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z" />
                                 </svg>
                             </a>
                             <h3 class="text-xl font-bold text-[#0f172a]">AWS Certified Cloud Practitioner</h3>
@@ -949,21 +1253,34 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center gap-3">
-                            <button onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')" class="org-mark green hover:scale-105 transition-transform cursor-pointer" title="Preview NVIDIA Certificate">
+                            <button
+                                onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
+                                class="org-mark green hover:scale-105 transition-transform cursor-pointer"
+                                title="Preview NVIDIA Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
-                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z"/>
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z" />
                                 </svg>
                             </button>
-                            <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data Science</h3>
+                            <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data
+                                Science</h3>
                         </div>
                         <p class="muted mt-3 text-sm">AI and data science foundations</p>
                     </div>
                     <div class="mt-6 flex flex-col gap-2">
-                        <button onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#047857] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#065f46] transition-colors shadow-sm cursor-pointer">
+                        <button
+                            onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#047857] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#065f46] transition-colors shadow-sm cursor-pointer">
                             <span>🔍 Preview Certificate</span>
                         </button>
-                        <a href="./NVIDIA_2420090129.pdf" download class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <a href="./NVIDIA_2420090129.pdf" download
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
                             <span>Download PDF</span>
                         </a>
                     </div>
@@ -971,34 +1288,45 @@
             </div>
         </section>
 
-        <footer class="py-4 text-center text-sm muted">
-            © 2026 Ruchit Dwara. Built to present cloud, software, and business-focused work in a clean format.
+        <footer class="py-6 text-center text-sm muted border-t border-slate-200/60 dark:border-slate-800 mt-12">
+            Built by Ruchit Dwara using React, Tailwind and Vite. © 2026
         </footer>
     </main>
 
+    <!-- Floating Back to Top Button -->
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+        class="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full bg-[#1d4ed8] text-white shadow-xl flex items-center justify-center text-lg font-bold transition-all duration-300 opacity-0 translate-y-10 pointer-events-none hover:bg-[#1e40af] hover:scale-110" title="Back to Top">
+        ↑
+    </button>
+
     <!-- Glassmorphism Lightbox Modal Overlay for PDF Certificate Viewer -->
-    <div id="certModal" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-md hidden items-center justify-center p-3 md:p-6 transition-opacity">
-        <div class="bg-white rounded-3xl max-w-4xl w-full h-[85vh] flex flex-col shadow-2xl border border-blue-100 overflow-hidden animate-scale-up">
-            <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
-                <h3 id="modalTitle" class="text-lg font-bold text-[#0f172a]">Certificate Preview</h3>
+    <div id="certModal"
+        class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-md hidden items-center justify-center p-3 md:p-6 transition-opacity">
+        <div
+            class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full h-[85vh] flex flex-col shadow-2xl border border-blue-100 dark:border-slate-800 overflow-hidden animate-scale-up">
+            <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/80 dark:bg-slate-800/80">
+                <h3 id="modalTitle" class="text-lg font-bold text-[#0f172a] dark:text-white">Certificate Preview</h3>
                 <div class="flex items-center gap-3">
                     <a id="modalDownloadBtn" href="#" download class="soft-pill text-xs py-1.5 px-3">Download PDF</a>
-                    <button onclick="closeCertModal()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold flex items-center justify-center transition-colors cursor-pointer">✕</button>
+                    <button onclick="closeCertModal()"
+                        class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-700 dark:text-slate-200 font-bold flex items-center justify-center transition-colors cursor-pointer">✕</button>
                 </div>
             </div>
-            <div class="flex-1 p-2 bg-slate-100 overflow-hidden">
+            <div class="flex-1 p-2 bg-slate-100 dark:bg-slate-950 overflow-hidden">
                 <iframe id="modalIframe" src="" class="w-full h-full rounded-2xl border-0"></iframe>
             </div>
         </div>
     </div>
 
     <!-- Copy Email Toast Alert -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#0f172a] text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-50 bg-[#0f172a] text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
         <span class="text-sm font-semibold">Email copied to clipboard! (ruchit2003@gmail.com)</span>
     </div>
 
     <script>
+        // Mouse trail effect
         document.addEventListener('mousemove', (event) => {
             const cursor = document.querySelector('.cursor-gradient');
             if (!cursor) return;
@@ -1006,6 +1334,74 @@
             cursor.style.top = `${event.clientY}px`;
         });
 
+        // Typing Effect under Hero Name
+        const typingPhrases = [
+            "B.Tech CS&IT Student",
+            "Cloud Computing Enthusiast",
+            "Web Development Developer",
+            "AI & Automation Passionate"
+        ];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const current = typingPhrases[phraseIdx];
+            const el = document.getElementById('typingText');
+            if (!el) return;
+
+            if (isDeleting) {
+                el.innerText = current.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                el.innerText = current.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let speed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIdx === current.length) {
+                speed = 1800;
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % typingPhrases.length;
+                speed = 400;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            const btnText = document.getElementById('themeToggleText');
+            if (btnText) btnText.innerText = isDark ? '🌙 Dark' : '🌞 Light';
+        }
+
+        // Restore Theme Preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+            const btnText = document.getElementById('themeToggleText');
+            if (btnText) btnText.innerText = '🌙 Dark';
+        }
+
+        // Back to Top Scroll Listener
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('backToTop');
+            if (!btn) return;
+            if (window.scrollY > 300) {
+                btn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                btn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                btn.classList.remove('opacity-100', 'translate-y-0');
+                btn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }
+        });
+
+        // Copy Email Toast Function
         function copyEmail() {
             navigator.clipboard.writeText('ruchit2003@gmail.com').then(() => {
                 const toast = document.getElementById('toast');
@@ -1018,6 +1414,7 @@
             });
         }
 
+        // Modal PDF Certificate Lightbox
         function openCertModal(title, pdfUrl) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalIframe').src = pdfUrl;
@@ -1039,6 +1436,9 @@
                 closeCertModal();
             }
         });
+
+        document.addEventListener('DOMContentLoaded', typeEffect);
     </script>
 </body>
+
 </html>
