@@ -192,6 +192,52 @@
             padding: 20px;
         }
 
+        .org-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .org-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 18px;
+            border: 1px solid rgba(37, 99, 235, 0.12);
+            background: #f7faff;
+        }
+
+        .org-mark {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            border: 1px solid rgba(37, 99, 235, 0.16);
+        }
+
+        .org-mark.blue { background: #e8f1ff; color: #1d4ed8; }
+        .org-mark.slate { background: #edf2f7; color: #334155; }
+        .org-mark.green { background: #ecfdf5; color: #047857; }
+
+        .card-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .text-link {
+            color: #1d4ed8;
+            font-weight: 600;
+        }
+
         @media (max-width: 900px) {
             .grid-two, .grid-three, .grid-four { grid-template-columns: 1fr; }
             .hero { padding: 24px; }
@@ -257,6 +303,31 @@
                 <div class="eyebrow mb-2">Education</div>
                 <h2 class="section-title">Academic Background</h2>
             </div>
+            <div class="org-row mb-6">
+                <div class="org-badge">
+                    <span class="org-mark blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Koneru Lakshmaiah Education Foundation</p>
+                        <p class="text-xs text-[#5b6475]">B.Tech in CSE & IT</p>
+                    </div>
+                </div>
+                <div class="org-badge">
+                    <span class="org-mark slate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">The Gaudium School</p>
+                        <p class="text-xs text-[#5b6475]">IB Diploma Programme</p>
+                    </div>
+                </div>
+            </div>
             <div class="grid-two">
                 <div class="mini-card card-shadow hover-lift">
                     <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education Foundation (KLH)</p>
@@ -280,6 +351,34 @@
             <div class="mb-5">
                 <div class="eyebrow mb-2">Skills</div>
                 <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="org-row mb-6">
+                <div class="org-badge">
+                    <span class="org-mark blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 3h10v10H1z" fill="#F25022"/>
+                            <path d="M13 3h10v10H13z" fill="#7FBA00"/>
+                            <path d="M1 15h10v10H1z" fill="#00A4EF"/>
+                            <path d="M13 15h10v10H13z" fill="#FFB900"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Azure & Cloud</p>
+                        <p class="text-xs text-[#5b6475]">Infrastructure and scalable systems</p>
+                    </div>
+                </div>
+                <div class="org-badge">
+                    <span class="org-mark slate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Web Development</p>
+                        <p class="text-xs text-[#5b6475]">Frontend and backend implementation</p>
+                    </div>
+                </div>
             </div>
             <div class="grid-two">
                 <div class="mini-card">
@@ -338,13 +437,34 @@
                 <div class="eyebrow mb-2">Experience</div>
                 <h2 class="section-title">Experience</h2>
             </div>
+            <div class="org-row mb-6">
+                <div class="org-badge">
+                    <span class="org-mark green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Pinnacle Labs</p>
+                        <p class="text-xs text-[#5b6475]">Web Development Internship</p>
+                    </div>
+                </div>
+            </div>
             <div class="mini-card card-shadow hover-lift">
                 <div class="flex items-start justify-between gap-4 flex-wrap">
                     <div>
                         <h3 class="text-xl font-bold text-[#0f172a]">Pinnacle Labs | Web Development Intern</h3>
                         <p class="muted mt-1">Virtual Internship | June 1, 2026 - July 1, 2026</p>
                     </div>
-                    <a class="text-[#1d4ed8] font-semibold" href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>Certificate</a>
+                    <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors" href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Certificate PDF</span>
+                    </a>
                 </div>
                 <p class="mt-4 text-[#334155] leading-relaxed">
                     Demonstrated exceptional dedication and skill during a 4-week virtual internship in Web Development at Pinnacle Labs. The internship focused on practical tasks and project contributions, reinforcing my ability to work through real development workflows with consistency and attention to detail.
@@ -357,27 +477,93 @@
                 <div class="eyebrow mb-2">Projects</div>
                 <h2 class="section-title">Projects</h2>
             </div>
+            <div class="org-row mb-6">
+                <div class="org-badge">
+                    <span class="org-mark blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"/>
+                            <polyline points="8 6 2 12 8 18"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Applied Systems</p>
+                        <p class="text-xs text-[#5b6475]">Full-stack & cloud projects</p>
+                    </div>
+                </div>
+                <div class="org-badge">
+                    <span class="org-mark slate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 3h10v10H1z" fill="#F25022"/>
+                            <path d="M13 3h10v10H13z" fill="#7FBA00"/>
+                            <path d="M1 15h10v10H1z" fill="#00A4EF"/>
+                            <path d="M13 15h10v10H13z" fill="#FFB900"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Business Value</p>
+                        <p class="text-xs text-[#5b6475]">Built for practical impact</p>
+                    </div>
+                </div>
+            </div>
             <div class="grid-three">
-                <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">Faculty Student Management System</h3>
-                    <p class="muted mt-2">A full-stack platform to streamline student, faculty, and academic management with a secure and user-friendly interface.</p>
-                    <p class="mt-4 text-[#334155]"><strong>User Roles:</strong> Student, Faculty, Admin</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">Vercel</span>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0f172a]">Faculty Student Management System</h3>
+                        <p class="muted mt-2">A full-stack platform to streamline student, faculty, and academic management with a secure and user-friendly interface.</p>
+                        <p class="mt-4 text-[#334155]"><strong>User Roles:</strong> Student, Faculty, Admin</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">Vercel</span>
+                        </div>
+                    </div>
+                    <div class="card-actions border-t border-blue-50 pt-4 mt-6">
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
                     </div>
                 </div>
-                <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">Scheme Finder</h3>
-                    <p class="muted mt-2">A web platform that helps users discover government schemes based on eligibility, with an emphasis on simple navigation and practical usefulness.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Eligibility Filters</span>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0f172a]">Scheme Finder</h3>
+                        <p class="muted mt-2">A web platform that helps users discover government schemes based on eligibility, with an emphasis on simple navigation and practical usefulness.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Eligibility Filters</span>
+                        </div>
+                    </div>
+                    <div class="card-actions border-t border-blue-50 pt-4 mt-6">
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
                     </div>
                 </div>
-                <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">Portfolio Website</h3>
-                    <p class="muted mt-2">A clean, responsive personal site built to present my background, projects, and achievements in a professional format.</p>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Vite</span>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0f172a]">Portfolio Website</h3>
+                        <p class="muted mt-2">A clean, responsive personal site built to present my background, projects, and achievements in a professional format.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Vite</span>
+                        </div>
+                    </div>
+                    <div class="card-actions border-t border-blue-50 pt-4 mt-6">
+                        <a href="https://klh2420090129.github.io/MYPORTFOLIO/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                            <span>Live</span>
+                        </a>
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -417,18 +603,105 @@
                 <div class="eyebrow mb-2">Certifications</div>
                 <h2 class="section-title">Certifications</h2>
             </div>
+            <div class="org-row mb-6">
+                <div class="org-badge">
+                    <span class="org-mark blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 3h10v10H1z" fill="#F25022"/>
+                            <path d="M13 3h10v10H13z" fill="#7FBA00"/>
+                            <path d="M1 15h10v10H1z" fill="#00A4EF"/>
+                            <path d="M13 15h10v10H13z" fill="#FFB900"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Microsoft</p>
+                        <p class="text-xs text-[#5b6475]">Azure AI Fundamentals</p>
+                    </div>
+                </div>
+                <div class="org-badge">
+                    <span class="org-mark slate">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
+                            <path d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z"/>
+                            <path d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">Amazon Web Services</p>
+                        <p class="text-xs text-[#5b6475]">Cloud Practitioner</p>
+                    </div>
+                </div>
+                <div class="org-badge">
+                    <span class="org-mark green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z"/>
+                        </svg>
+                    </span>
+                    <div>
+                        <p class="text-sm font-semibold text-[#0f172a]">NVIDIA</p>
+                        <p class="text-xs text-[#5b6475]">Accelerated Data Science</p>
+                    </div>
+                </div>
+            </div>
             <div class="grid-three">
-                <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">Microsoft Certified: Azure AI Fundamentals</h3>
-                    <p class="muted mt-2">AI-900</p>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="org-mark blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M1 3h10v10H1z" fill="#F25022"/>
+                                    <path d="M13 3h10v10H13z" fill="#7FBA00"/>
+                                    <path d="M1 15h10v10H1z" fill="#00A4EF"/>
+                                    <path d="M13 15h10v10H1z" fill="#FFB900"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-xl font-bold text-[#0f172a]">Microsoft Certified: Azure AI Fundamentals</h3>
+                        </div>
+                        <p class="muted mt-3 text-sm">AI-900</p>
+                    </div>
+                    <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Download PDF Certificate</span>
+                    </a>
                 </div>
-                <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">AWS Certified Cloud Practitioner</h3>
-                    <p class="muted mt-2">Foundational cloud certification</p>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="org-mark slate">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
+                                    <path d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z"/>
+                                    <path d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-xl font-bold text-[#0f172a]">AWS Certified Cloud Practitioner</h3>
+                        </div>
+                        <p class="muted mt-3 text-sm">Foundational cloud certification</p>
+                    </div>
+                    <p class="mt-6 text-sm text-[#5b6475] italic">Certificate available on request.</p>
                 </div>
-                <div class="mini-card card-shadow hover-lift">
-                    <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data Science</h3>
-                    <p class="muted mt-2">AI and data science foundations</p>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-center gap-3">
+                            <span class="org-mark green">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z"/>
+                                </svg>
+                            </span>
+                            <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data Science</h3>
+                        </div>
+                        <p class="muted mt-3 text-sm">AI and data science foundations</p>
+                    </div>
+                    <a href="./NVIDIA_2420090129.pdf" download class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Download PDF Certificate</span>
+                    </a>
                 </div>
             </div>
         </section>
