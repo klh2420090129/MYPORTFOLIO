@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruchit Dwara - Aspiring Cloud Solutions Engineer</title>
+    
+    <!-- OpenGraph & LinkedIn Meta Tags -->
+    <meta property="og:title" content="Ruchit Dwara - Aspiring Cloud Solutions Engineer">
+    <meta property="og:description" content="Portfolio of Ruchit Dwara - Azure AI Certified, B.Tech CSE & IT. Cloud Solutions, Infrastructure & Software Engineering.">
+    <meta property="og:image" content="https://klh2420090129.github.io/MYPORTFOLIO/Updated%20Formal%20Pic.png">
+    <meta property="og:url" content="https://klh2420090129.github.io/MYPORTFOLIO/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ruchit Dwara - Aspiring Cloud Solutions Engineer">
+    <meta name="twitter:description" content="Portfolio of Ruchit Dwara - Azure AI Certified, B.Tech CSE & IT. Cloud Solutions, Infrastructure & Software Engineering.">
+    <meta name="twitter:image" content="https://klh2420090129.github.io/MYPORTFOLIO/Updated%20Formal%20Pic.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -69,7 +81,7 @@
             z-index: 1;
             max-width: 1160px;
             margin: 0 auto;
-            padding: 28px 18px 48px;
+            padding: 24px 18px 48px;
         }
 
         .hero, .section-card {
@@ -132,6 +144,7 @@
             font-weight: 600;
             padding: 0.65rem 1rem;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            cursor: pointer;
         }
 
         .soft-pill:hover {
@@ -258,6 +271,15 @@
             font-weight: 600;
         }
 
+        @keyframes scaleUp {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .animate-scale-up {
+            animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
         @media (max-width: 900px) {
             .grid-two, .grid-three, .grid-four { grid-template-columns: 1fr; }
             .hero { padding: 24px; }
@@ -274,7 +296,32 @@
 <body>
     <div class="cursor-gradient"></div>
 
+    <!-- Frosted Glass Sticky Header Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-blue-100/80 shadow-sm transition-all">
+        <div class="max-w-[1160px] mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="font-extrabold text-lg text-[#1d4ed8] flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-xs shadow-md">RD</span>
+                <span class="tracking-tight">Ruchit Dwara</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-[#334155]">
+                <a href="#about" class="hover:text-[#1d4ed8] transition-colors">About</a>
+                <a href="#education" class="hover:text-[#1d4ed8] transition-colors">Education</a>
+                <a href="#skills" class="hover:text-[#1d4ed8] transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-[#1d4ed8] transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-[#1d4ed8] transition-colors">Projects</a>
+                <a href="#certifications" class="hover:text-[#1d4ed8] transition-colors">Certifications</a>
+            </nav>
+            <div class="flex items-center gap-2">
+                <button onclick="copyEmail()" class="soft-pill text-xs py-2 px-3 flex items-center gap-1.5 cursor-pointer">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                    <span>Copy Email</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
     <main class="shell space-y-6 md:space-y-8">
+        <!-- Hero Section -->
         <section class="hero">
             <div class="grid-two items-center gap-8">
                 <div>
@@ -298,13 +345,13 @@
                             </svg>
                             <span>Download Resume</span>
                         </a>
-                        <a href="mailto:ruchit2003@gmail.com" class="soft-pill">
+                        <button onclick="copyEmail()" class="soft-pill">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <span>Email</span>
-                        </a>
+                            <span>Copy Email</span>
+                        </button>
                         <a href="https://www.linkedin.com/in/ruchit-dwara-560210365/" target="_blank" rel="noopener noreferrer" class="soft-pill">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
@@ -326,8 +373,29 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Recruiter Key Impact Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 pt-6 border-t border-blue-100/80">
+                <div class="mini-card text-center p-4 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 border-blue-100 hover-lift">
+                    <p class="text-3xl font-black text-[#1d4ed8]">3+</p>
+                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Industry Certifications</p>
+                </div>
+                <div class="mini-card text-center p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 border-emerald-100 hover-lift">
+                    <p class="text-3xl font-black text-[#047857]">2nd Prize</p>
+                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Innovation Competition</p>
+                </div>
+                <div class="mini-card text-center p-4 bg-gradient-to-br from-purple-50/80 to-indigo-50/40 border-purple-100 hover-lift">
+                    <p class="text-3xl font-black text-[#7c3aed]">150+</p>
+                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Event Participants Led</p>
+                </div>
+                <div class="mini-card text-center p-4 bg-gradient-to-br from-sky-50/80 to-blue-50/40 border-sky-100 hover-lift">
+                    <p class="text-3xl font-black text-[#0284c7]">Cloud & AI</p>
+                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Azure Solutions Focus</p>
+                </div>
+            </div>
         </section>
 
+        <!-- About Section -->
         <section id="about" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">About</div>
@@ -341,6 +409,7 @@
             </p>
         </section>
 
+        <!-- Education Section -->
         <section id="education" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Education</div>
@@ -390,6 +459,7 @@
             </div>
         </section>
 
+        <!-- Skills Section -->
         <section id="skills" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Skills</div>
@@ -402,7 +472,7 @@
                             <path d="M1 3h10v10H1z" fill="#F25022"/>
                             <path d="M13 3h10v10H13z" fill="#7FBA00"/>
                             <path d="M1 15h10v10H1z" fill="#00A4EF"/>
-                            <path d="M13 15h10v10H13z" fill="#FFB900"/>
+                            <path d="M13 15h10v10H1z" fill="#FFB900"/>
                         </svg>
                     </span>
                     <div>
@@ -475,13 +545,14 @@
             </div>
         </section>
 
+        <!-- Experience Section -->
         <section id="experience" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Experience</div>
                 <h2 class="section-title">Experience</h2>
             </div>
             <div class="org-row mb-6">
-                <a href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" target="_blank" class="org-badge" title="Open Pinnacle Labs Internship Certificate PDF">
+                <button onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')" class="org-badge" title="Preview Pinnacle Labs Internship Certificate PDF">
                     <span class="org-mark green">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="16 18 22 12 16 6"/>
@@ -489,10 +560,10 @@
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">Pinnacle Labs ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">Pinnacle Labs 🔍</p>
                         <p class="text-xs text-[#5b6475]">Web Development Internship Certificate</p>
                     </div>
-                </a>
+                </button>
             </div>
             <div class="mini-card card-shadow hover-lift">
                 <div class="flex items-start justify-between gap-4 flex-wrap">
@@ -500,14 +571,19 @@
                         <h3 class="text-xl font-bold text-[#0f172a]">Pinnacle Labs | Web Development Intern</h3>
                         <p class="muted mt-1">Virtual Internship | June 1, 2026 - July 1, 2026</p>
                     </div>
-                    <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors" href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                        <span>Certificate PDF</span>
-                    </a>
+                    <div class="flex items-center gap-2">
+                        <button onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors cursor-pointer">
+                            <span>Preview</span>
+                        </button>
+                        <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors" href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
                 </div>
                 <p class="mt-4 text-[#334155] leading-relaxed">
                     Demonstrated exceptional dedication and skill during a 4-week virtual internship in Web Development at Pinnacle Labs. The internship focused on practical tasks and project contributions, reinforcing my ability to work through real development workflows with consistency and attention to detail.
@@ -515,6 +591,7 @@
             </div>
         </section>
 
+        <!-- Projects Section -->
         <section id="projects" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Projects</div>
@@ -612,6 +689,7 @@
             </div>
         </section>
 
+        <!-- Achievements Section -->
         <section id="achievements" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Achievements</div>
@@ -624,6 +702,7 @@
             </div>
         </section>
 
+        <!-- Responsibility Section -->
         <section id="responsibility" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Position of Responsibility</div>
@@ -641,26 +720,27 @@
             </div>
         </section>
 
+        <!-- Certifications Section -->
         <section id="certifications" class="section-card">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Certifications</div>
                 <h2 class="section-title">Certifications</h2>
             </div>
             <div class="org-row mb-6">
-                <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" target="_blank" class="org-badge" title="View Microsoft Azure Certificate PDF">
+                <button onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')" class="org-badge" title="Preview Microsoft Azure Certificate PDF">
                     <span class="org-mark blue">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M1 3h10v10H1z" fill="#F25022"/>
                             <path d="M13 3h10v10H13z" fill="#7FBA00"/>
                             <path d="M1 15h10v10H1z" fill="#00A4EF"/>
-                            <path d="M13 15h10v10H13z" fill="#FFB900"/>
+                            <path d="M13 15h10v10H1z" fill="#FFB900"/>
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Microsoft Azure ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Microsoft Azure 🔍</p>
                         <p class="text-xs text-[#5b6475]">Azure AI Fundamentals Certificate</p>
                     </div>
-                </a>
+                </button>
                 <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener noreferrer" class="org-badge" title="View AWS Cloud Practitioner Information">
                     <span class="org-mark slate">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
@@ -673,42 +753,43 @@
                         <p class="text-xs text-[#5b6475]">Cloud Practitioner</p>
                     </div>
                 </a>
-                <a href="./NVIDIA_2420090129.pdf" target="_blank" class="org-badge" title="View NVIDIA Certificate PDF">
+                <button onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')" class="org-badge" title="Preview NVIDIA Certificate PDF">
                     <span class="org-mark green">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z"/>
                         </svg>
                     </span>
                     <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">NVIDIA ↗</p>
+                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#047857] transition-colors">NVIDIA 🔍</p>
                         <p class="text-xs text-[#5b6475]">Accelerated Data Science Certificate</p>
                     </div>
-                </a>
+                </button>
             </div>
             <div class="grid-three">
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center gap-3">
-                            <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" target="_blank" class="org-mark blue hover:scale-105 transition-transform" title="Open Microsoft Azure Certificate">
+                            <button onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')" class="org-mark blue hover:scale-105 transition-transform cursor-pointer" title="Preview Microsoft Azure Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M1 3h10v10H1z" fill="#F25022"/>
                                     <path d="M13 3h10v10H13z" fill="#7FBA00"/>
                                     <path d="M1 15h10v10H1z" fill="#00A4EF"/>
                                     <path d="M13 15h10v10H13z" fill="#FFB900"/>
                                 </svg>
-                            </a>
+                            </button>
                             <h3 class="text-xl font-bold text-[#0f172a]">Microsoft Certified: Azure AI Fundamentals</h3>
                         </div>
                         <p class="muted mt-3 text-sm">AI-900</p>
                     </div>
-                    <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                        <span>Download PDF Certificate</span>
-                    </a>
+                    <div class="mt-6 flex flex-col gap-2">
+                        <button onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1d4ed8] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1e40af] transition-colors shadow-sm cursor-pointer">
+                            <span>🔍 Preview Certificate</span>
+                        </button>
+                        <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
@@ -728,23 +809,24 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-center gap-3">
-                            <a href="./NVIDIA_2420090129.pdf" target="_blank" class="org-mark green hover:scale-105 transition-transform" title="Open NVIDIA Certificate">
+                            <button onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')" class="org-mark green hover:scale-105 transition-transform cursor-pointer" title="Preview NVIDIA Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
                                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z"/>
                                 </svg>
-                            </a>
+                            </button>
                             <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data Science</h3>
                         </div>
                         <p class="muted mt-3 text-sm">AI and data science foundations</p>
                     </div>
-                    <a href="./NVIDIA_2420090129.pdf" download class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                        <span>Download PDF Certificate</span>
-                    </a>
+                    <div class="mt-6 flex flex-col gap-2">
+                        <button onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')" class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#047857] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#065f46] transition-colors shadow-sm cursor-pointer">
+                            <span>🔍 Preview Certificate</span>
+                        </button>
+                        <a href="./NVIDIA_2420090129.pdf" download class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -754,12 +836,68 @@
         </footer>
     </main>
 
+    <!-- Glassmorphism Lightbox Modal Overlay for PDF Certificate Viewer -->
+    <div id="certModal" class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-md hidden items-center justify-center p-3 md:p-6 transition-opacity">
+        <div class="bg-white rounded-3xl max-w-4xl w-full h-[85vh] flex flex-col shadow-2xl border border-blue-100 overflow-hidden animate-scale-up">
+            <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+                <h3 id="modalTitle" class="text-lg font-bold text-[#0f172a]">Certificate Preview</h3>
+                <div class="flex items-center gap-3">
+                    <a id="modalDownloadBtn" href="#" download class="soft-pill text-xs py-1.5 px-3">Download PDF</a>
+                    <button onclick="closeCertModal()" class="w-8 h-8 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold flex items-center justify-center transition-colors cursor-pointer">✕</button>
+                </div>
+            </div>
+            <div class="flex-1 p-2 bg-slate-100 overflow-hidden">
+                <iframe id="modalIframe" src="" class="w-full h-full rounded-2xl border-0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy Email Toast Alert -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-[#0f172a] text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-sm font-semibold">Email copied to clipboard! (ruchit2003@gmail.com)</span>
+    </div>
+
     <script>
         document.addEventListener('mousemove', (event) => {
             const cursor = document.querySelector('.cursor-gradient');
             if (!cursor) return;
             cursor.style.left = `${event.clientX}px`;
             cursor.style.top = `${event.clientY}px`;
+        });
+
+        function copyEmail() {
+            navigator.clipboard.writeText('ruchit2003@gmail.com').then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                toast.classList.add('opacity-100', 'translate-y-0');
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                    toast.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                }, 3000);
+            });
+        }
+
+        function openCertModal(title, pdfUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalIframe').src = pdfUrl;
+            document.getElementById('modalDownloadBtn').href = pdfUrl;
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCertModal() {
+            const modal = document.getElementById('certModal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            document.getElementById('modalIframe').src = '';
+        }
+
+        document.getElementById('certModal').addEventListener('click', (e) => {
+            if (e.target.id === 'certModal') {
+                closeCertModal();
+            }
         });
     </script>
 </body>

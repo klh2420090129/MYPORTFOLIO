@@ -254,6 +254,24 @@ export default function App() {
     return () => observer.disconnect()
   }, [])
 
+  const [activeModal, setActiveModal] = useState({ title: '', url: '', open: false })
+  const [toastOpen, setToastOpen] = useState(false)
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText('ruchit2003@gmail.com').then(() => {
+      setToastOpen(true)
+      setTimeout(() => setToastOpen(false), 3000)
+    })
+  }
+
+  const openCertModal = (title, url) => {
+    setActiveModal({ title, url, open: true })
+  }
+
+  const closeCertModal = () => {
+    setActiveModal({ title: '', url: '', open: false })
+  }
+
   return (
     <>
       <CursorGradient />
@@ -261,16 +279,19 @@ export default function App() {
         <header className="sticky top-4 z-30 rounded-full border border-blue-100 bg-white/80 px-4 py-3 shadow-[0_16px_36px_rgba(37,99,235,0.08)] backdrop-blur-md">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <a href="#top" className="flex items-center gap-3 font-extrabold tracking-tight text-[#1d4ed8]">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#eff5ff] text-sm shadow-sm">RD</span>
+              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#eff5ff] text-sm shadow-sm font-black">RD</span>
               <span>Ruchit Dwara</span>
             </a>
             <div className="flex flex-wrap items-center gap-2 text-sm">
               <a href="#about" className="soft-link">About</a>
+              <a href="#education" className="soft-link">Education</a>
               <a href="#skills" className="soft-link">Skills</a>
-              <a href="#projects" className="soft-link">Projects</a>
               <a href="#experience" className="soft-link">Experience</a>
+              <a href="#projects" className="soft-link">Projects</a>
               <a href="#certifications" className="soft-link">Certifications</a>
-              <a href={`${base}Resume_Final.pdf`} download="Ruchit_Dwara_Resume_2026.pdf" className="soft-link soft-link-primary">Resume</a>
+              <button onClick={copyEmail} className="soft-link soft-link-primary flex items-center gap-1 cursor-pointer">
+                <span>Copy Email</span>
+              </button>
             </div>
           </div>
         </header>
@@ -289,7 +310,7 @@ export default function App() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a href={`${base}Resume_Final.pdf`} download="Ruchit_Dwara_Resume_2026.pdf" className="soft-button">Download Resume</a>
-                  <a href="mailto:ruchit2003@gmail.com" className="soft-button">Email</a>
+                  <button onClick={copyEmail} className="soft-button cursor-pointer">Copy Email</button>
                   <a href={links.linkedin} target="_blank" rel="noopener noreferrer" className="soft-button">LinkedIn</a>
                   <a href={links.github} target="_blank" rel="noopener noreferrer" className="soft-button">GitHub</a>
                 </div>
@@ -306,6 +327,25 @@ export default function App() {
                     className="h-full w-full object-cover"
                   />
                 </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 pt-6 border-t border-blue-100/80">
+              <div className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 p-4 text-center">
+                <p className="text-3xl font-black text-[#1d4ed8]">3+</p>
+                <p class="text-xs font-semibold text-[#5b6475] mt-1">Industry Certifications</p>
+              </div>
+              <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 p-4 text-center">
+                <p className="text-3xl font-black text-[#047857]">2nd Prize</p>
+                <p class="text-xs font-semibold text-[#5b6475] mt-1">Innovation Competition</p>
+              </div>
+              <div className="rounded-2xl border border-purple-100 bg-gradient-to-br from-purple-50/80 to-indigo-50/40 p-4 text-center">
+                <p className="text-3xl font-black text-[#7c3aed]">150+</p>
+                <p class="text-xs font-semibold text-[#5b6475] mt-1">Event Participants Led</p>
+              </div>
+              <div className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50/80 to-blue-50/40 p-4 text-center">
+                <p className="text-3xl font-black text-[#0284c7]">Cloud & AI</p>
+                <p class="text-xs font-semibold text-[#5b6475] mt-1">Azure Solutions Focus</p>
               </div>
             </div>
           </section>
