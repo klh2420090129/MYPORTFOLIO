@@ -278,8 +278,15 @@ export default function App() {
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col gap-6 px-4 py-6 md:px-6 md:py-8">
         <header className="sticky top-4 z-30 rounded-full border border-blue-100 bg-white/80 px-4 py-3 shadow-[0_16px_36px_rgba(37,99,235,0.08)] backdrop-blur-md">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <a href="#top" className="flex items-center gap-3 font-extrabold tracking-tight text-[#1d4ed8]">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-[#eff5ff] text-sm shadow-sm font-black">RD</span>
+            <a href="#top" className="flex items-center gap-3 font-bold tracking-tight text-[#0f172a]">
+              <div className="h-9 w-9 overflow-hidden rounded-full border-2 border-blue-600 bg-white shadow-sm flex-shrink-0">
+                <img
+                  src={`${base}Updated%20Formal%20Pic.png`}
+                  alt="Ruchit Dwara"
+                  onError={(e) => { e.currentTarget.src = 'https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512' }}
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <span>Ruchit Dwara</span>
             </a>
             <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -289,9 +296,13 @@ export default function App() {
               <a href="#experience" className="soft-link">Experience</a>
               <a href="#projects" className="soft-link">Projects</a>
               <a href="#certifications" className="soft-link">Certifications</a>
-              <button onClick={copyEmail} className="soft-link soft-link-primary flex items-center gap-1 cursor-pointer">
-                <span>Copy Email</span>
-              </button>
+              <a href="mailto:ruchit2003@gmail.com" onClick={copyEmail} className="inline-flex items-center gap-1.5 rounded-full bg-[#1d4ed8] px-4 py-2 text-xs font-semibold text-white shadow-md transition-all hover:bg-[#1e40af] hover:shadow-lg">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span>Get in Touch</span>
+              </a>
             </div>
           </div>
         </header>
