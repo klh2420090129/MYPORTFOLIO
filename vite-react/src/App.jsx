@@ -195,15 +195,35 @@ function OrgBadge({ label, tone = 'blue' }) {
 function SectionOrgRow({ items }) {
   return (
     <div className="flex flex-wrap gap-3 mb-6">
-      {items.map((item) => (
-        <div key={item.name} className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-[#f7faff] px-4 py-2.5 shadow-sm">
-          <OrgBadge label={item.label} tone={item.tone} />
-          <div>
-            <p className="text-sm font-semibold text-[#0f172a]">{item.name}</p>
-            <p className="text-xs text-[#5b6475]">{item.caption}</p>
+      {items.map((item) => {
+        const content = (
+          <>
+            <OrgBadge label={item.label} tone={item.tone} />
+            <div>
+              <p className="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">
+                {item.name} {item.href ? '↗' : ''}
+              </p>
+              <p className="text-xs text-[#5b6475]">{item.caption}</p>
+            </div>
+          </>
+        )
+
+        return item.href ? (
+          <a
+            key={item.name}
+            href={item.href}
+            target={item.href.startsWith('#') ? '_self' : '_blank'}
+            rel={item.href.startsWith('#') ? undefined : 'noopener noreferrer'}
+            className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-[#f7faff] px-4 py-2.5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md cursor-pointer text-left"
+          >
+            {content}
+          </a>
+        ) : (
+          <div key={item.name} className="flex items-center gap-3 rounded-2xl border border-blue-100 bg-[#f7faff] px-4 py-2.5 shadow-sm">
+            {content}
           </div>
-        </div>
-      ))}
+        )
+      })}
     </div>
   )
 }
@@ -306,8 +326,8 @@ export default function App() {
           <ScrollRevealSection className="card-surface" id="education">
             <SectionHeader eyebrow="Education" title="Academic Background" />
             <SectionOrgRow items={[
-              { label: 'KLH', name: 'Koneru Lakshmaiah Education Foundation', caption: 'B.Tech in CSE & IT', tone: 'blue' },
-              { label: 'TG', name: 'The Gaudium School', caption: 'IB Diploma Programme', tone: 'slate' },
+              { label: 'KLH', name: 'Koneru Lakshmaiah Education Foundation', caption: 'B.Tech in CSE & IT', tone: 'blue', href: 'https://klh.edu.in/' },
+              { label: 'TG', name: 'The Gaudium School', caption: 'IB Diploma Programme', tone: 'slate', href: 'https://www.thegaudium.com/' },
             ]} />
             <div className="grid gap-4 md:grid-cols-2">
               <div className="info-card">
@@ -331,8 +351,8 @@ export default function App() {
           <ScrollRevealSection className="card-surface" id="skills">
             <SectionHeader eyebrow="Skills" title="Skills & Expertise" />
             <SectionOrgRow items={[
-              { label: 'AZ', name: 'Azure & Cloud', caption: 'Infrastructure and scalable systems', tone: 'blue' },
-              { label: 'WEB', name: 'Web Development', caption: 'Frontend and backend implementation', tone: 'slate' },
+              { label: 'AZ', name: 'Azure & Cloud', caption: 'Infrastructure and scalable systems', tone: 'blue', href: '#certifications' },
+              { label: 'WEB', name: 'Web Development', caption: 'Frontend and backend implementation', tone: 'slate', href: '#projects' },
             ]} />
             <div className="grid gap-4 md:grid-cols-2">
               <SkillCard title="Programming Languages" items={skills.languages} />
@@ -350,7 +370,7 @@ export default function App() {
 
           <ScrollRevealSection className="card-surface" id="experience">
             <SectionHeader eyebrow="Experience" title="Experience" />
-            <SectionOrgRow items={[{ label: 'PL', name: 'Pinnacle Labs', caption: 'Web Development Internship', tone: 'green' }]} />
+            <SectionOrgRow items={[{ label: 'PL', name: 'Pinnacle Labs', caption: 'Web Development Internship Certificate', tone: 'green', href: `${base}Internship%20Pinnacle%20Lab%20Certificate.pdf` }]} />
             <div className="info-card">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div>
@@ -370,8 +390,8 @@ export default function App() {
           <ScrollRevealSection className="card-surface" id="projects">
             <SectionHeader eyebrow="Projects" title="Projects" />
             <SectionOrgRow items={[
-              { label: 'PL', name: 'Applied Systems', caption: 'Full-stack & cloud projects', tone: 'blue' },
-              { label: 'AZ', name: 'Business Value', caption: 'Built for practical impact', tone: 'slate' },
+              { label: 'PL', name: 'Applied Systems', caption: 'Full-stack & cloud projects', tone: 'blue', href: 'https://github.com/klh2420090129' },
+              { label: 'AZ', name: 'Business Value', caption: 'Built for practical impact', tone: 'slate', href: 'https://github.com/klh2420090129' },
             ]} />
             <div className="grid gap-4 md:grid-cols-3">
               {projects.map((project) => (
@@ -394,7 +414,7 @@ export default function App() {
                         className="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors"
                       >
                         {link.label === 'GitHub' ? <GithubIcon className="w-4 h-4" /> : <ExternalLinkIcon className="w-4 h-4" />}
-                        <span>{link.label}</span>
+                        <span>{link.label} ↗</span>
                       </a>
                     ))}
                   </div>
@@ -429,9 +449,9 @@ export default function App() {
           <ScrollRevealSection className="card-surface" id="certifications">
             <SectionHeader eyebrow="Certifications" title="Certifications" />
             <SectionOrgRow items={[
-              { label: 'MS', name: 'Microsoft', caption: 'Azure AI Fundamentals', tone: 'blue' },
-              { label: 'AWS', name: 'Amazon Web Services', caption: 'Cloud Practitioner', tone: 'slate' },
-              { label: 'NV', name: 'NVIDIA', caption: 'Accelerated Data Science', tone: 'green' },
+              { label: 'MS', name: 'Microsoft', caption: 'Azure AI Fundamentals Certificate', tone: 'blue', href: `${base}${encodeURIComponent('Credentials - RuchitDwara-0945 _ Microsoft Learn.pdf')}` },
+              { label: 'AWS', name: 'Amazon Web Services', caption: 'Cloud Practitioner', tone: 'slate', href: 'https://aws.amazon.com/certification/certified-cloud-practitioner/' },
+              { label: 'NV', name: 'NVIDIA', caption: 'Accelerated Data Science Certificate', tone: 'green', href: `${base}${encodeURIComponent('NVIDIA_2420090129.pdf')}` },
             ]} />
             <div className="grid gap-4 md:grid-cols-3">
               {certifications.map((cert) => (
