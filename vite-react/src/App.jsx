@@ -341,7 +341,7 @@ export default function App() {
                 <div className="mb-4 inline-flex items-center gap-2 text-[0.72rem] font-bold uppercase tracking-[0.18em] text-[#2563eb]">Portfolio</div>
                 <h1 className="animated-gradient text-4xl font-extrabold tracking-tight md:text-6xl">Ruchit Dwara</h1>
                 <p className="mt-4 max-w-2xl text-lg font-semibold leading-relaxed text-[#334155] md:text-xl">
-                  Aspiring Cloud Solutions Engineer | Bridging Enterprise Technology & Business
+                  B.Tech CS&IT Student | Cloud Computing, Web Development & AI Enthusiast
                 </p>
                 <p className="mt-5 max-w-3xl text-base leading-relaxed text-[#5b6475] md:text-lg">
                   I am a Computer Science undergraduate passionate about using technology to solve real-world problems. Rather than focusing solely on algorithms, I enjoy understanding how systems, people, and businesses interact and how technology can improve the way organizations operate.
@@ -382,8 +382,8 @@ export default function App() {
                 <p class="text-xs font-semibold text-[#5b6475] mt-1">Event Participants Led</p>
               </div>
               <div className="rounded-2xl border border-sky-100 bg-gradient-to-br from-sky-50/80 to-blue-50/40 p-4 text-center">
-                <p className="text-3xl font-black text-[#0284c7]">Cloud & AI</p>
-                <p class="text-xs font-semibold text-[#5b6475] mt-1">Azure Solutions Focus</p>
+                <p className="text-3xl font-black text-[#0284c7]">500+</p>
+                <p class="text-xs font-semibold text-[#5b6475] mt-1">GitHub Commits</p>
               </div>
             </div>
           </section>
@@ -459,9 +459,12 @@ export default function App() {
                   Certificate
                 </a>
               </div>
-              <p className="mt-4 text-[#334155] leading-relaxed">
-                Demonstrated exceptional dedication and skill during a 4-week virtual internship in Web Development at Pinnacle Labs. The internship focused on practical tasks and project contributions, reinforcing my ability to work through real development workflows with consistency and attention to detail.
-              </p>
+              <ul className="mt-4 space-y-2 text-[#334155] leading-relaxed list-disc list-inside">
+                <li>Built responsive web pages using HTML, CSS, and JavaScript.</li>
+                <li>Collaborated on real-world development tasks and project features.</li>
+                <li>Improved UI responsiveness and accessibility across device viewports.</li>
+                <li>Learned Git and professional development workflows.</li>
+              </ul>
             </div>
           </ScrollRevealSection>
 
