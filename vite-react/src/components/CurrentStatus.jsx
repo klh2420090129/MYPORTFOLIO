@@ -2,23 +2,23 @@ import React from 'react'
 
 export default function CurrentStatus() {
   const currentlyLearning = [
-    "Advanced Data Structure",
-    "Mathematical Optimization",
-    "Full Stack Development",
-    "Computer Networks",
-    "Design Analysis & Algorithm"
+    "Microsoft Azure Fundamentals (AZ-900)",
+    "Linux Administration",
+    "Networking Fundamentals",
+    "Cloud Architecture Basics",
+    "Cybersecurity Foundations"
   ]
 
   const currentlyBuilding = [
     {
-      name: "AI Chatbot Platform",
-      description: "Building an intelligent chatbot using OpenAI API",
-      progress: 75
+      name: "Cloud Portfolio Refresh",
+      description: "Reworking my portfolio around cloud, infrastructure, and business communication",
+      progress: 80
     },
     {
-      name: "Task Management App",
-      description: "Full-stack MERN application with real-time updates",
-      progress: 45
+      name: "Azure Lab Practice",
+      description: "Practicing core Azure services, storage, identity, and deployment workflows",
+      progress: 55
     }
   ]
 

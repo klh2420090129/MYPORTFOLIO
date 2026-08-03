@@ -3,16 +3,16 @@ import React from 'react'
 const experiences = [
   {
     title: "Bachelor's in Computer Science & Information Technology",
-    company: "KLHB",
+    company: "Koneru Lakshmaiah Education Foundation (KLH)",
     period: "2024 - Present",
-    description: "Pursuing undergraduate degree focused on core computer science fundamentals including data structures, algorithms, and object-oriented programming. Specializing in modern web development with React, AI/ML with Python and TensorFlow, database management systems, and software engineering practices. Actively building hands-on projects to apply theoretical concepts.",
+    description: "Pursuing a B.Tech focused on operating systems, databases, computer networks, software engineering, and enterprise web technologies. Building a cloud-first foundation through Microsoft Azure, AWS, Linux, cybersecurity electives, and independent study while applying concepts through hands-on projects.",
     type: "education"
   },
   {
     title: "International Baccalaureate Diploma Program",
     company: "The Gaudium School",
     period: "2022",
-    description: "Completed rigorous pre-university curriculum with 37/45 points. Studied six subjects across sciences, humanities, and languages at higher and standard levels. Completed Extended Essay, Theory of Knowledge, and CAS (Creativity, Activity, Service) components, developing critical thinking, research, and time management skills.",
+    description: "Completed the IB Diploma Programme while developing research, analytical reasoning, and time-management skills through the Extended Essay and Theory of Knowledge coursework. Built a strong academic base and the communication habits needed to explain technical ideas clearly.",
     type: "education"
   }
 ]

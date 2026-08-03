@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const resumeData = "Ruchit Dwara is a B.Tech CS & IT student at KLH (Nov 2028). Skills: C, Java, Python, AI. Certs: Google AI Essentials, Git/GitHub. Lived in USA for 7 years.";
+const resumeData = "Ruchit Dwara is an aspiring Cloud Solutions Engineer from Hyderabad, India. He is a B.Tech CS & IT student at KLH expected Nov 2028 and is building skills in Microsoft Azure, AWS, Linux, networking fundamentals, HTML, CSS, JavaScript, SQL, MySQL, Git, GitHub, Python, Java, and C. Certifications include Azure AI Fundamentals (AI-900), Google AI Essentials, and Git and GitHub Certification, with AZ-900 in progress. He lived in the United States for seven years and communicates well with both technical and business audiences.";
 
 async function getAIResponse(query) {
   const apiKey = ""; // Runtime provided
@@ -30,7 +30,7 @@ async function getAIResponse(query) {
 export default function Chatbot() {
   const [open, setOpen] = useState(false)
   const [messages, setMessages] = useState([
-    { role: 'assistant', text: "Hi there! I'm Ruchit's portfolio assistant. I can tell you about his education, skills, or certifications. How can I help?" }
+    { role: 'assistant', text: "Hi there! I'm Ruchit's portfolio assistant. I can tell you about his cloud skills, certifications, education, or background. How can I help?" }
   ])
   const [input, setInput] = useState('')
   const scrollRef = useRef(null)

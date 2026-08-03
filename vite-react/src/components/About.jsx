@@ -10,7 +10,7 @@ export default function About() {
         </div>
         <div className="bg-[#161b22] rounded-3xl p-6 md:p-10 max-w-2xl text-center lg:text-left shadow-2xl border border-[#30363d]">
           <p className="text-base md:text-lg leading-relaxed">
-            I am a dynamic and motivated B.Tech Computer Science and IT student with a proven track record of academic excellence, strong leadership, and cross-cultural experience from my time in the United States. I'm passionate about statistical analysis, artificial intelligence, and programming (Java, Python, C). I excel in project-based learning and teamwork, with strong communication and people skills. I'm actively pursuing advanced knowledge in emerging technologies, always applying a structured and analytical approach to problem-solving.
+            I am a Computer Science undergraduate building a foundation in Microsoft Azure, AWS, and Linux to solve practical business problems through technology rather than pure algorithmic work. With Azure AI Fundamentals certification in hand and AZ-900 in progress, I am focusing on cloud, infrastructure, and clear technical communication. My seven years in the United States strengthened my cross-cultural communication skills, helping me translate technical ideas for both engineering and business audiences.
           </p>
         </div>
       </div>

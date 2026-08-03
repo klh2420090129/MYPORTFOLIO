@@ -7,10 +7,10 @@ export default function Header() {
   const [typingSpeed, setTypingSpeed] = useState(150)
 
   const roles = [
-    'Computer Science Student',
-    'Full Stack Developer',
-    'Problem Solver',
-    'Tech Enthusiast'
+    'Aspiring Cloud Solutions Engineer',
+    'Enterprise Tech Translator',
+    'Azure Fundamentals Learner',
+    'Business Problem Solver'
   ]
 
   useEffect(() => {

@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold animated-gradient mb-4">Ruchit Dwara</h3>
             <p className="text-[#8b949e] text-sm leading-relaxed">
-              Aspiring Computer Science & IT Student passionate about AI, programming, and building innovative solutions.
+              Aspiring Cloud Solutions Engineer focused on Azure, AWS, Linux, and practical technology that bridges engineering and business.
             </p>
           </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/Resume_Final.pdf"
-                  download="Ruchit_Dwara_Resume.pdf"
+                  download="Ruchit_Dwara_Resume_2026.pdf"
                   className="text-[#8b949e] hover:text-[#58a6ff] transition-colors text-sm"
                 >
                   Download Resume

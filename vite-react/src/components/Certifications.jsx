@@ -2,17 +2,38 @@ import React from 'react'
 
 const certifications = [
   {
+    name: "Microsoft Certified: Azure AI Fundamentals (AI-900)",
+    issuer: "Microsoft",
+    date: "Certified",
+    icon: "☁️",
+    link: "#"
+  },
+  {
     name: "Google AI Essentials",
-    issuer: "Google",
+    issuer: "Coursera",
     date: "2024",
     icon: "🤖",
     link: "https://coursera.org/share/3c54e0a9c2b57b0f6482546714edd293"
   },
   {
-    name: "Azure AI-900 Fundamentals",
-    issuer: "Microsoft",
-    date: "2024",
-    icon: "☁️",
+    name: "Git and GitHub Certification",
+    issuer: "GitHub",
+    date: "Certified",
+    icon: "🔧",
+    link: "#"
+  },
+  {
+    name: "KL Social Internship Certificate",
+    issuer: "KLH",
+    date: "Certified",
+    icon: "🎓",
+    link: "#"
+  },
+  {
+    name: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+    issuer: "In Progress",
+    date: "Current",
+    icon: "🚀",
     link: "#"
   }
 ]
