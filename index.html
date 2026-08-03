@@ -6,15 +6,47 @@
     <title>Ruchit Dwara - Aspiring Cloud Solutions Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        :root {
+            --bg: #eef4ff;
+            --bg-2: #f8fbff;
+            --card: rgba(255, 255, 255, 0.92);
+            --card-border: rgba(37, 99, 235, 0.18);
+            --text: #1f2937;
+            --muted: #5b6475;
+            --accent: #2563eb;
+            --accent-2: #7c3aed;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 28%),
+                radial-gradient(circle at top right, rgba(124, 58, 237, 0.10), transparent 22%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
             overflow-x: hidden;
             cursor: none;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                radial-gradient(circle at 10% 15%, rgba(37, 99, 235, 0.12) 0 2px, transparent 3px),
+                radial-gradient(circle at 80% 12%, rgba(37, 99, 235, 0.08) 0 2px, transparent 3px),
+                radial-gradient(circle at 92% 38%, rgba(124, 58, 237, 0.10) 0 2px, transparent 3px),
+                radial-gradient(circle at 4% 74%, rgba(37, 99, 235, 0.08) 0 2px, transparent 3px),
+                radial-gradient(circle at 88% 85%, rgba(124, 58, 237, 0.08) 0 2px, transparent 3px);
+            opacity: 0.6;
         }
 
         .cursor-gradient {
@@ -22,157 +54,396 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 300px;
-            height: 300px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(160, 100, 255, 0.4) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(124, 58, 237, 0.08) 38%, transparent 72%);
             transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+            transition: width 0.2s ease, height 0.2s ease;
             z-index: 9999;
+            mix-blend-mode: multiply;
         }
 
-        .section-header {
-            font-size: 2.5rem;
+        .shell {
+            position: relative;
+            z-index: 1;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 28px 18px 48px;
+        }
+
+        .hero, .section-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+        }
+
+        .hero { padding: 34px; }
+        .section-card { padding: 30px; }
+
+        .section-title {
+            font-size: clamp(1.7rem, 2vw, 2.5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            color: #1e3a8a;
+            letter-spacing: -0.03em;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
             font-weight: 700;
-            color: #58a6ff;
-            text-align: center;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 0.95rem;
+            border-radius: 999px;
+            background: #eaf1ff;
+            color: #23336b;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border: 1px solid rgba(37, 99, 235, 0.10);
         }
 
-        .animate-fadeIn {
-            animation: fadeIn 1s ease-in-out;
+        .soft-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            border-radius: 999px;
+            background: #eff5ff;
+            border: 1px solid rgba(37, 99, 235, 0.10);
+            color: #1d4ed8;
+            font-weight: 600;
+            padding: 0.65rem 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
         }
 
-        .animated-gradient {
-            background: linear-gradient(270deg, #58a6ff, #8a58ff, #ff58a6);
-            background-size: 600% 600%;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-animation 6s ease infinite;
+        .soft-pill:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 24px rgba(37, 99, 235, 0.12);
+            background: #e8f0ff;
         }
 
-        @keyframes gradient-animation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .card-shadow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 44px rgba(37, 99, 235, 0.12);
+            border-color: rgba(37, 99, 235, 0.28);
         }
 
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
-        .animate-on-scroll.in-view {
-            opacity: 1;
-            transform: translateY(0);
+        .hover-lift:hover {
+            transform: translateY(-2px);
         }
 
-        .skill-card {
-            transition: all 0.3s ease;
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 999px;
+            border: 5px solid #2f6cf2;
+            box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
+            overflow: hidden;
+            background: #fff;
+            flex-shrink: 0;
         }
 
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px -10px rgba(88, 166, 255, 0.4);
-            border-color: rgba(88, 166, 255, 0.3);
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .grid-four {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .muted { color: var(--muted); }
+
+        .mini-card {
+            background: #f7faff;
+            border: 1px solid rgba(37, 99, 235, 0.12);
+            border-radius: 22px;
+            padding: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .grid-two, .grid-three, .grid-four { grid-template-columns: 1fr; }
+            .hero { padding: 24px; }
+        }
+
+        @media (max-width: 640px) {
+            body { cursor: auto; }
+            .cursor-gradient { display: none; }
+            .shell { padding: 18px 14px 34px; }
+            .avatar { width: 140px; height: 140px; }
         }
     </style>
 </head>
-<body class="bg-[#0d1117] text-[#c9d1d9] min-h-screen">
+<body>
     <div class="cursor-gradient"></div>
 
-    <main class="container mx-auto p-4 md:p-8">
-        <header class="text-center py-16 animate-fadeIn">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 animated-gradient">
-                Ruchit Dwara
-            </h1>
-            <p class="text-lg md:text-2xl text-[#8b949e]">
-                Aspiring Cloud Solutions Engineer | Bridging Enterprise Technology & Business
-            </p>
-            <div class="mt-6">
-                <a href="./Resume_Final.pdf" download="Ruchit_Dwara_Resume_2026.pdf" class="inline-flex items-center gap-2 bg-[#58a6ff] hover:bg-[#4895e8] text-white px-5 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-                    Download Resume
-                </a>
-            </div>
-        </header>
-
-        <section id="about" class="mb-16 animate-on-scroll">
-            <h2 class="section-header">About Me</h2>
-            <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-12">
-                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#58a6ff] shadow-lg">
-                    <img src="./Updated%20Formal%20Pic.png" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=58a6ff&color=fff&size=256'" alt="Ruchit Dwara" class="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-105">
-                </div>
-                <div class="bg-[#161b22] rounded-3xl p-6 md:p-10 max-w-2xl text-center lg:text-left shadow-2xl border border-[#30363d]">
-                    <p class="text-base md:text-lg leading-relaxed">
-                        I am a Computer Science undergraduate passionate about using technology to solve real-world problems. Rather than focusing solely on algorithms, I enjoy understanding how systems, people, and businesses interact and how technology can improve the way organizations operate.
-                        <br><br>
-                        My interests lie in cloud computing, enterprise software, and infrastructure, with a particular focus on Microsoft Azure and practical, scalable solutions. I enjoy bridging the gap between technical concepts and business needs, combining strong communication skills with hands-on experience in web development and system design.
-                        <br><br>
-                        Currently, I am building projects that address real organizational challenges while continuously expanding my knowledge of cloud technologies, networking, and enterprise systems. In the long term, I aspire to work at the intersection of technology, strategy, and business.
+    <main class="shell space-y-6 md:space-y-8">
+        <section class="hero">
+            <div class="grid-two items-center gap-8">
+                <div>
+                    <div class="eyebrow mb-4">Portfolio</div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-[#1d4ed8] leading-tight">
+                        Ruchit Dwara
+                    </h1>
+                    <p class="mt-4 text-lg md:text-xl text-[#334155] font-medium leading-relaxed max-w-2xl">
+                        Aspiring Cloud Solutions Engineer | Bridging Enterprise Technology & Business
                     </p>
+                    <p class="mt-5 text-base md:text-lg muted leading-relaxed max-w-3xl">
+                        I am a Computer Science undergraduate passionate about using technology to solve real-world problems. Rather than focusing solely on algorithms, I enjoy understanding how systems, people, and businesses interact and how technology can improve the way organizations operate.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="./Resume_Final.pdf" download="Ruchit_Dwara_Resume_2026.pdf" class="soft-pill">Download Resume</a>
+                        <a href="mailto:ruchit2003@gmail.com" class="soft-pill">Email</a>
+                        <a href="https://www.linkedin.com/in/ruchit-dwara-560210365/" target="_blank" rel="noopener noreferrer" class="soft-pill">LinkedIn</a>
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="soft-pill">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="flex justify-center md:justify-end">
+                    <div class="avatar">
+                        <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="mb-16 animate-on-scroll">
-            <h2 class="section-header">Skills & Expertise</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Cloud & Infrastructure</h3>
-                    <p class="text-[#8b949e]">Microsoft Azure, AWS (foundational), Linux, Networking Fundamentals, Cisco Packet Tracer</p>
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">About</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <p class="text-[#334155] leading-relaxed text-base md:text-lg">
+                My interests lie in cloud computing, enterprise software, and infrastructure, with a particular focus on Microsoft Azure and practical, scalable solutions. I enjoy bridging the gap between technical concepts and business needs, combining strong communication skills with hands-on experience in web development and system design.
+            </p>
+            <p class="mt-4 text-[#334155] leading-relaxed text-base md:text-lg">
+                Currently, I am building projects that address real organizational challenges while continuously expanding my knowledge of cloud technologies, networking, and enterprise systems. In the long term, I aspire to work at the intersection of technology, strategy, and business.
+            </p>
+        </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Education</div>
+                <h2 class="section-title">Academic Background</h2>
+            </div>
+            <div class="grid-two">
+                <div class="mini-card card-shadow hover-lift">
+                    <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education Foundation (KLH)</p>
+                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">Bachelor of Technology, Computer Science & Information Technology</h3>
+                    <p class="muted mt-1">Hyderabad, India | Expected Nov 2028</p>
+                    <ul class="mt-4 space-y-2 text-[#334155] leading-relaxed">
+                        <li>Relevant coursework: Operating Systems, Databases, Computer Networks, Software Engineering, Enterprise Web Technologies</li>
+                        <li>Exploring cloud computing and cybersecurity through electives and independent study</li>
+                    </ul>
                 </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Web Development</h3>
-                    <p class="text-[#8b949e]">HTML, CSS, JavaScript</p>
-                </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Databases</h3>
-                    <p class="text-[#8b949e]">SQL, MySQL</p>
-                </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Version Control & Tools</h3>
-                    <p class="text-[#8b949e]">Git, GitHub, VS Code</p>
-                </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Programming</h3>
-                    <p class="text-[#8b949e]">Python, Java, C</p>
-                </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Professional</h3>
-                    <p class="text-[#8b949e]">Technical Communication, Cross-Functional Collaboration, Documentation</p>
+                <div class="mini-card card-shadow hover-lift">
+                    <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">The Gaudium School</p>
+                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">International Baccalaureate (IB) Diploma Programme</h3>
+                    <p class="muted mt-1">Hyderabad, India</p>
+                    <p class="mt-4 text-[#334155] leading-relaxed">Built research, analytical reasoning, and time-management skills through the IB Extended Essay and Theory of Knowledge coursework.</p>
                 </div>
             </div>
         </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Skills</div>
+                <h2 class="section-title">Skills & Expertise</h2>
+            </div>
+            <div class="grid-two">
+                <div class="mini-card">
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="chip">Java</span>
+                        <span class="chip">Python</span>
+                        <span class="chip">C</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">C++</span>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Web Development & Backend</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="chip">React.js</span>
+                        <span class="chip">Node.js</span>
+                        <span class="chip">Express.js</span>
+                        <span class="chip">REST APIs</span>
+                        <span class="chip">JWT Auth</span>
+                        <span class="chip">MySQL & PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">AI / ML & Automation</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="chip">Generative AI</span>
+                        <span class="chip">GitHub Copilot</span>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Tools & Platforms</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="chip">Git</span>
+                        <span class="chip">GitHub</span>
+                        <span class="chip">Postman</span>
+                        <span class="chip">VS Code</span>
+                        <span class="chip">Linux</span>
+                    </div>
+                </div>
+                <div class="mini-card md:col-span-2">
+                    <h3 class="text-xl font-bold text-[#0f172a] mb-4">Cloud & Infrastructure</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="chip">Microsoft Azure</span>
+                        <span class="chip">AWS (Foundational)</span>
+                        <span class="chip">Networking Fundamentals</span>
+                        <span class="chip">System Design</span>
+                        <span class="chip">Enterprise Software</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Experience</div>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="mini-card card-shadow hover-lift">
+                <div class="flex items-start justify-between gap-4 flex-wrap">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#0f172a]">Pinnacle Labs | Web Development Intern</h3>
+                        <p class="muted mt-1">Virtual Internship | June 1, 2026 - July 1, 2026</p>
+                    </div>
+                    <a class="text-[#1d4ed8] font-semibold" href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>Certificate</a>
+                </div>
+                <p class="mt-4 text-[#334155] leading-relaxed">
+                    Demonstrated exceptional dedication and skill during a 4-week virtual internship in Web Development at Pinnacle Labs. The internship focused on practical tasks and project contributions, reinforcing my ability to work through real development workflows with consistency and attention to detail.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Projects</div>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="grid-three">
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Faculty Student Management System</h3>
+                    <p class="muted mt-2">A full-stack platform to streamline student, faculty, and academic management with a secure and user-friendly interface.</p>
+                    <p class="mt-4 text-[#334155]"><strong>User Roles:</strong> Student, Faculty, Admin</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">Vercel</span>
+                    </div>
+                </div>
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Scheme Finder</h3>
+                    <p class="muted mt-2">A web platform that helps users discover government schemes based on eligibility, with an emphasis on simple navigation and practical usefulness.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="chip">JavaScript</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Eligibility Filters</span>
+                    </div>
+                </div>
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Portfolio Website</h3>
+                    <p class="muted mt-2">A clean, responsive personal site built to present my background, projects, and achievements in a professional format.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Vite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Achievements</div>
+                <h2 class="section-title">Achievements</h2>
+            </div>
+            <div class="mini-card card-shadow hover-lift">
+                <p class="text-[#334155] leading-relaxed">
+                    <strong>2nd Prize (Runner up)</strong> - College-level innovation competition at KL University for developing <strong>Scheme Finder</strong>, a web platform that helps users discover government schemes based on eligibility.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Position of Responsibility</div>
+                <h2 class="section-title">Leadership & Responsibility</h2>
+            </div>
+            <div class="grid-two">
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Event Organizer - Blind Coding Challenge | KL University</h3>
+                    <p class="mt-3 text-[#334155] leading-relaxed">Organized a Blind Coding competition with 150+ participants, coordinating the event and ensuring successful execution from start to finish.</p>
+                </div>
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Student Coordinator - Internship Pitch 2026 | KL University</h3>
+                    <p class="mt-3 text-[#334155] leading-relaxed">Coordinated the Internship Pitch 2026 event, managing registrations, participant coordination, and smooth competition execution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <div class="mb-5">
+                <div class="eyebrow mb-2">Certifications</div>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="grid-three">
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">Microsoft Certified: Azure AI Fundamentals</h3>
+                    <p class="muted mt-2">AI-900</p>
+                </div>
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">AWS Certified Cloud Practitioner</h3>
+                    <p class="muted mt-2">Foundational cloud certification</p>
+                </div>
+                <div class="mini-card card-shadow hover-lift">
+                    <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data Science</h3>
+                    <p class="muted mt-2">AI and data science foundations</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-4 text-center text-sm muted">
+            © 2026 Ruchit Dwara. Built to present cloud, software, and business-focused work in a clean format.
+        </footer>
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('mousemove', (event) => {
             const cursor = document.querySelector('.cursor-gradient');
-            if (cursor) {
-                window.addEventListener('mousemove', (event) => {
-                    cursor.style.left = `${event.clientX}px`;
-                    cursor.style.top = `${event.clientY}px`;
-                });
-            }
-
-            const sections = document.querySelectorAll('.animate-on-scroll');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            sections.forEach((section) => observer.observe(section));
+            if (!cursor) return;
+            cursor.style.left = `${event.clientX}px`;
+            cursor.style.top = `${event.clientY}px`;
         });
     </script>
 </body>
