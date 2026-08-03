@@ -685,8 +685,8 @@
                         <p class="text-xs text-[#5b6475]">B.Tech in CSE & IT</p>
                     </div>
                 </a>
-                <a href="https://www.thegaudium.com/" target="_blank" rel="noopener noreferrer" class="org-badge"
-                    title="Visit The Gaudium School Website">
+                <button onclick="openCertModal('The Gaudium School - IBDP Certificates & Documents', './IBDP%20Certificates-Documents.pdf')" class="org-badge"
+                    title="Preview IBDP High School Diploma Certificates & Documents">
                     <span class="org-mark slate">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -695,31 +695,46 @@
                     </span>
                     <div>
                         <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">The
-                            Gaudium School ↗</p>
-                        <p class="text-xs text-[#5b6475]">IB Diploma Programme</p>
+                            Gaudium School 🔍</p>
+                        <p class="text-xs text-[#5b6475]">IB Diploma Certificates & Documents</p>
                     </div>
-                </a>
+                </button>
             </div>
             <div class="grid-two">
-                <div class="mini-card card-shadow hover-lift">
-                    <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education
-                        Foundation (KLH)</p>
-                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">Bachelor of Technology, Computer Science &
-                        Information Technology</h3>
-                    <p class="muted mt-1">Hyderabad, India | Expected Nov 2028</p>
-                    <ul class="mt-4 space-y-2 text-[#334155] leading-relaxed">
-                        <li>Relevant coursework: Operating Systems, Databases, Computer Networks, Software Engineering,
-                            Enterprise Web Technologies</li>
-                        <li>Exploring cloud computing and cybersecurity through electives and independent study</li>
-                    </ul>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education
+                            Foundation (KLH)</p>
+                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white mt-2">Bachelor of Technology, Computer Science &
+                            Information Technology</h3>
+                        <p class="muted mt-1">Hyderabad, India | Expected Nov 2028</p>
+                        <ul class="mt-4 space-y-2 text-[#334155] dark:text-slate-300 leading-relaxed text-sm">
+                            <li>• Relevant coursework: Operating Systems, Databases, Computer Networks, Software Engineering, Enterprise Web Technologies</li>
+                            <li>• Exploring cloud computing and cybersecurity through electives and independent study</li>
+                        </ul>
+                    </div>
+                    <p class="mt-6 text-xs text-[#5b6475] dark:text-slate-400 italic">Degree currently in progress (Expected 2028)</p>
                 </div>
-                <div class="mini-card card-shadow hover-lift">
-                    <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">The Gaudium School</p>
-                    <h3 class="text-xl font-bold text-[#0f172a] mt-2">International Baccalaureate (IB) Diploma Programme
-                    </h3>
-                    <p class="muted mt-1">Hyderabad, India</p>
-                    <p class="mt-4 text-[#334155] leading-relaxed">Built research, analytical reasoning, and
-                        time-management skills through the IB Extended Essay and Theory of Knowledge coursework.</p>
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">The Gaudium School</p>
+                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white mt-2">International Baccalaureate (IB) Diploma Programme</h3>
+                        <p class="muted mt-1">Hyderabad, India</p>
+                        <p class="mt-4 text-[#334155] dark:text-slate-300 leading-relaxed text-sm">Built research, analytical reasoning, and time-management skills through the IB Extended Essay and Theory of Knowledge coursework.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 flex-wrap">
+                        <button onclick="openCertModal('The Gaudium School - IBDP Certificates & Documents', './IBDP%20Certificates-Documents.pdf')" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors cursor-pointer">
+                            <span>🔍 Preview IBDP Paperwork</span>
+                        </button>
+                        <a href="./IBDP%20Certificates-Documents.pdf" download="IBDP_Certificates_Documents_Ruchit_Dwara.pdf" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            <span>Download PDF</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
