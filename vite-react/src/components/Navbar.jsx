@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const base = import.meta.env.BASE_URL || '/'
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -47,7 +48,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/Resume_Final.pdf"
+              href={`${base}Resume_Final.pdf`}
               download="Ruchit_Dwara_Resume_2026.pdf"
               className="flex items-center gap-2 bg-[#58a6ff] hover:bg-[#4895e8] text-white px-4 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#58a6ff]/25"
             >
@@ -80,7 +81,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="/Resume_Final.pdf"
+              href={`${base}Resume_Final.pdf`}
               download="Ruchit_Dwara_Resume_2026.pdf"
               className="inline-flex items-center gap-2 bg-[#58a6ff] hover:bg-[#4895e8] text-white px-4 py-2 rounded-full font-medium transition-all duration-300"
             >

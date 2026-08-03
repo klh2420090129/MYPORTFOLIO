@@ -137,7 +137,7 @@
                 Aspiring Cloud Solutions Engineer | Bridging Enterprise Technology & Business
             </p>
             <div class="mt-6">
-                <a href="/Resume_Final.pdf" download="Ruchit_Dwara_Resume_2026.pdf" class="inline-flex items-center gap-2 bg-[#58a6ff] hover:bg-[#4895e8] text-white px-5 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+                <a href="./Resume_Final.pdf" download="Ruchit_Dwara_Resume_2026.pdf" class="inline-flex items-center gap-2 bg-[#58a6ff] hover:bg-[#4895e8] text-white px-5 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
                     Download Resume
                 </a>
             </div>
@@ -147,25 +147,32 @@
             <h2 class="section-header">About Me</h2>
             <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-12">
                 <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#58a6ff] shadow-lg">
-                    <img src="/Updated Formal Pic.png" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=58a6ff&color=fff&size=256'" alt="Ruchit Dwara" class="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-105">
+                    <img src="./Updated Formal Pic.png" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=58a6ff&color=fff&size=256'" alt="Ruchit Dwara" class="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="bg-[#161b22] rounded-3xl p-6 md:p-10 max-w-2xl text-center lg:text-left shadow-2xl border border-[#30363d]">
                     <p class="text-base md:text-lg leading-relaxed">
                         I am a Computer Science undergraduate building a foundation in Microsoft Azure, AWS, and Linux to solve practical business problems through technology rather than pure algorithmic work. With Azure AI Fundamentals certification in hand and AZ-900 in progress, I am focusing on cloud, infrastructure, and clear technical communication. My seven years in the United States strengthened my cross-cultural communication skills, helping me translate technical ideas for both engineering and business audiences.
                     </p>
-                </div>
-            </div>
-        </section>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const cursor = document.querySelector('.cursor-gradient');
+                            if (cursor) {
+                                window.addEventListener('mousemove', (event) => {
+                                    cursor.style.left = `${event.clientX}px`;
+                                    cursor.style.top = `${event.clientY}px`;
+                                });
+                            }
 
-        <section id="skills" class="mb-16 animate-on-scroll">
-            <h2 class="section-header">Skills & Expertise</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Cloud & Infrastructure</h3>
-                    <p class="text-[#8b949e]">Microsoft Azure, AWS (foundational), Linux, Networking Fundamentals, Cisco Packet Tracer</p>
-                </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Web Development</h3>
+                            const sections = document.querySelectorAll('.animate-on-scroll');
+                            const observer = new IntersectionObserver((entries) => {
+                                entries.forEach((entry) => {
+                                    if (entry.isIntersecting) {
+                                        entry.target.classList.add('in-view');
+                                    }
+                                });
+                            }, { threshold: 0.1 });
+
+                            sections.forEach((section) => observer.observe(section));
+                        });
                     <p class="text-[#8b949e]">HTML, CSS, JavaScript</p>
                 </div>
                 <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">

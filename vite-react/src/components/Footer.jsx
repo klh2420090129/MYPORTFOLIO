@@ -3,6 +3,7 @@ import { links } from '../config.js'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const base = import.meta.env.BASE_URL || '/'
 
   const quickLinks = [
     { href: '#about', label: 'About' },
@@ -45,7 +46,7 @@ export default function Footer() {
               ))}
               <li>
                 <a
-                  href="/Resume_Final.pdf"
+                  href={`${base}Resume_Final.pdf`}
                   download="Ruchit_Dwara_Resume_2026.pdf"
                   className="text-[#8b949e] hover:text-[#58a6ff] transition-colors text-sm"
                 >
