@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { links } from './config.js'
 
 const skills = {
-  languages: ['Java', 'Python', 'C', 'SQL', 'C++'],
+  languages: ['Java', 'Python', 'C', 'SQL'],
   web: ['React.js', 'Node.js', 'Express.js', 'REST APIs', 'JWT Auth', 'MySQL & PostgreSQL'],
   ai: ['Generative AI', 'GitHub Copilot'],
   tools: ['Git', 'GitHub', 'Postman', 'VS Code', 'Linux'],
