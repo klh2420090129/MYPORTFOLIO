@@ -40,36 +40,6 @@
             text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
         }
 
-        .chat-bubble {
-            background-color: #21262d;
-            border-radius: 1.5rem;
-            padding: 1rem 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            max-width: 85%;
-            margin-bottom: 1rem;
-            position: relative;
-        }
-
-        .chat-bubble.user {
-            background-color: #238636;
-            color: white;
-            margin-left: auto;
-        }
-
-        .input-container {
-            display: flex;
-            align-items: center;
-            border-radius: 9999px;
-            background-color: #21262d;
-            padding: 0.5rem 1rem;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s;
-        }
-
-        .input-container:focus-within {
-            box-shadow: 0 0 0 2px #58a6ff;
-        }
-        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -78,7 +48,7 @@
         .animate-fadeIn {
             animation: fadeIn 1s ease-in-out;
         }
-        
+
         .animated-gradient {
             background: linear-gradient(270deg, #58a6ff, #8a58ff, #ff58a6);
             background-size: 600% 600%;
@@ -95,11 +65,11 @@
         }
 
         .animate-on-scroll {
-            opacity: 1;
-            transform: none;
+            opacity: 0;
+            transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        
+
         .animate-on-scroll.in-view {
             opacity: 1;
             transform: translateY(0);
@@ -108,27 +78,18 @@
         .skill-card {
             transition: all 0.3s ease;
         }
-        
+
         .skill-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px -10px rgba(88, 166, 255, 0.4);
-        }
-
-        #chat-messages::-webkit-scrollbar {
-            width: 4px;
-        }
-        #chat-messages::-webkit-scrollbar-thumb {
-            background: #30363d;
-            border-radius: 10px;
+            border-color: rgba(88, 166, 255, 0.3);
         }
     </style>
 </head>
 <body class="bg-[#0d1117] text-[#c9d1d9] min-h-screen">
-
     <div class="cursor-gradient"></div>
 
     <main class="container mx-auto p-4 md:p-8">
-
         <header class="text-center py-16 animate-fadeIn">
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 animated-gradient">
                 Ruchit Dwara
@@ -147,32 +108,25 @@
             <h2 class="section-header">About Me</h2>
             <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-12">
                 <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#58a6ff] shadow-lg">
-                    <img src="./Updated Formal Pic.png" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=58a6ff&color=fff&size=256'" alt="Ruchit Dwara" class="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-105">
+                    <img src="./Updated%20Formal%20Pic.png" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=58a6ff&color=fff&size=256'" alt="Ruchit Dwara" class="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="bg-[#161b22] rounded-3xl p-6 md:p-10 max-w-2xl text-center lg:text-left shadow-2xl border border-[#30363d]">
                     <p class="text-base md:text-lg leading-relaxed">
                         I am a Computer Science undergraduate building a foundation in Microsoft Azure, AWS, and Linux to solve practical business problems through technology rather than pure algorithmic work. With Azure AI Fundamentals certification in hand and AZ-900 in progress, I am focusing on cloud, infrastructure, and clear technical communication. My seven years in the United States strengthened my cross-cultural communication skills, helping me translate technical ideas for both engineering and business audiences.
                     </p>
-                        document.addEventListener('DOMContentLoaded', () => {
-                            const cursor = document.querySelector('.cursor-gradient');
-                            if (cursor) {
-                                window.addEventListener('mousemove', (event) => {
-                                    cursor.style.left = `${event.clientX}px`;
-                                    cursor.style.top = `${event.clientY}px`;
-                                });
-                            }
+                </div>
+            </div>
+        </section>
 
-                            const sections = document.querySelectorAll('.animate-on-scroll');
-                            const observer = new IntersectionObserver((entries) => {
-                                entries.forEach((entry) => {
-                                    if (entry.isIntersecting) {
-                                        entry.target.classList.add('in-view');
-                                    }
-                                });
-                            }, { threshold: 0.1 });
-
-                            sections.forEach((section) => observer.observe(section));
-                        });
+        <section id="skills" class="mb-16 animate-on-scroll">
+            <h2 class="section-header">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Cloud & Infrastructure</h3>
+                    <p class="text-[#8b949e]">Microsoft Azure, AWS (foundational), Linux, Networking Fundamentals, Cisco Packet Tracer</p>
+                </div>
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Web Development</h3>
                     <p class="text-[#8b949e]">HTML, CSS, JavaScript</p>
                 </div>
                 <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
@@ -191,27 +145,20 @@
                     <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Professional</h3>
                     <p class="text-[#8b949e]">Technical Communication, Cross-Functional Collaboration, Documentation</p>
                 </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Certifications</h3>
-                    <p class="text-[#8b949e]">
-                        <span class="block">Microsoft AI-900 Fundamentals</span>
-                        <span class="block">Google AI Essentials Certification</span>
-                        <span class="block">Git and GitHub Certification</span>
-                        <span class="block">KL Social Internship Certificate</span>
-                        <span class="block">AZ-900 in progress</span>
-                    </p>
-                </div>
-                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
-                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Education</h3>
-                    <p class="text-[#8b949e]">B.Tech CS & IT - KLH<br>IB Diploma - The Gaudium School</p>
-                </div>
             </div>
         </section>
-
     </main>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.querySelector('.cursor-gradient');
+            if (cursor) {
+                window.addEventListener('mousemove', (event) => {
+                    cursor.style.left = `${event.clientX}px`;
+                    cursor.style.top = `${event.clientY}px`;
+                });
+            }
+
             const sections = document.querySelectorAll('.animate-on-scroll');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
