@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruchit Dwara - Aspiring CS & IT Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .cursor-gradient {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(160, 100, 255, 0.4) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+            z-index: 9999;
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #58a6ff;
+            text-align: center;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+        }
+
+        .chat-bubble {
+            background-color: #21262d;
+            border-radius: 1.5rem;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            max-width: 85%;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .chat-bubble.user {
+            background-color: #238636;
+            color: white;
+            margin-left: auto;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            border-radius: 9999px;
+            background-color: #21262d;
+            padding: 0.5rem 1rem;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+        }
+
+        .input-container:focus-within {
+            box-shadow: 0 0 0 2px #58a6ff;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(270deg, #58a6ff, #8a58ff, #ff58a6);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 6s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .animate-on-scroll.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px -10px rgba(88, 166, 255, 0.4);
+        }
+
+        #chat-messages::-webkit-scrollbar {
+            width: 4px;
+        }
+        #chat-messages::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-[#0d1117] text-[#c9d1d9] min-h-screen">
+
+    <div class="cursor-gradient"></div>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center py-16 animate-fadeIn">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 animated-gradient">
+                Ruchit Dwara
+            </h1>
+            <p class="text-lg md:text-2xl text-[#8b949e]">
+                Aspiring Computer Science & IT Student
+            </p>
+        </header>
+
+        <section id="about" class="mb-16 animate-on-scroll">
+            <h2 class="section-header">About Me</h2>
+            <div class="flex flex-col lg:flex-row items-center justify-center space-y-8 lg:space-y-0 lg:space-x-12">
+                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#58a6ff] shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&h=256&auto=format&fit=crop" onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=58a6ff&color=fff&size=256'" alt="Ruchit Dwara" class="w-full h-full object-cover rounded-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="bg-[#161b22] rounded-3xl p-6 md:p-10 max-w-2xl text-center lg:text-left shadow-2xl border border-[#30363d]">
+                    <p class="text-base md:text-lg leading-relaxed">
+                        I am a dynamic and motivated B.Tech Computer Science and IT student with a proven track record of academic excellence, strong leadership, and cross-cultural experience from my time in the United States. I'm passionate about statistical analysis, artificial intelligence, and programming (Java, Python, C). I excel in project-based learning and teamwork, with strong communication and people skills. I'm actively pursuing advanced knowledge in emerging technologies, always applying a structured and analytical approach to problem-solving.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="mb-16 animate-on-scroll">
+            <h2 class="section-header">Skills & Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Programming Languages</h3>
+                    <p class="text-[#8b949e]">C, C++, Java, Python, HTML, CSS</p>
+                </div>
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Core Skills</h3>
+                    <p class="text-[#8b949e]">Team Collaboration, Leadership, Technical Writing, Critical Thinking, Conflict Resolution</p>
+                </div>
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Certifications</h3>
+                    <p class="text-[#8b949e]">
+                        <span class="block">Google AI Essentials Certification</span>
+                        <span class="block">Git and GitHub Certiication</span>
+                        <span class="block">Microsoft AI-900 Fundamentals</span>
+                    </p>
+                </div>
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Interests</h3>
+                    <p class="text-[#8b949e]">Statistical Analysis, Artificial Intelligence, Database Management</p>
+                </div>
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Education</h3>
+                    <p class="text-[#8b949e]">B.Tech CS & IT - KLH<br>IB Diploma - The Gaudium School</p>
+                </div>
+                <div class="skill-card bg-[#161b22] border border-[#30363d] rounded-2xl p-6 text-center shadow-lg">
+                    <h3 class="text-xl font-bold mb-2 text-[#58a6ff]">Connect</h3>
+                    <div class="flex flex-col space-y-1">
+                        <a href="mailto:ruchit2003@gmail.com" class="text-[#58a6ff] hover:underline">ruchit2003@gmail.com</a>
+                        <a href="tel:+917337331937" class="text-[#58a6ff] hover:underline">+917337331937</a>
+                                <div class="flex justify-center space-x-4 mt-2">
+                                    <a href="https://www.linkedin.com/in/ruchit-dwara-560210365/" target="_blank" rel="noopener" class="text-[#8b949e] hover:text-[#58a6ff]">LinkedIn</a>
+                                    <a href="https://github.com/klh2420090129" target="_blank" rel="noopener" class="text-[#8b949e] hover:text-[#58a6ff]">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+        
+</body>
+</html>

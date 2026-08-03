@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.cursor-gradient {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(160, 100, 255, 0.4) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  z-index: 9999;
+}
+
+.section-header {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #58a6ff;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animated-gradient {
+  /* Visible fallback color when gradient clipping isn't supported */
+  color: #58a6ff;
+}
+
+/* Use gradient text only in browsers that support background-clip:text */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .animated-gradient {
+    background: linear-gradient(270deg, #58a6ff, #8a58ff, #ff58a6);
+    background-size: 600% 600%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* make text transparent so gradient shows */
+    animation: gradient-animation 6s ease infinite;
+  }
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill-card {
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px -10px rgba(88, 166, 255, 0.4);
+  border-color: rgba(88, 166, 255, 0.3);
+}
+
+/* Enhanced hover effects for interactive elements */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(88, 166, 255, 0.25);
+}
+
+/* Glow effect for buttons and links */
+.glow-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.4);
+}
+
+/* Smooth focus states for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for the page */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #58a6ff;
+}
+
+/* Smooth scroll for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+
