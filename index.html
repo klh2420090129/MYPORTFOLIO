@@ -150,6 +150,11 @@
             border-color: var(--header-border) !important;
         }
 
+        body.dark header a span,
+        body.dark header a span.font-bold {
+            color: #ffffff !important;
+        }
+
         body.dark .section-title,
         body.dark h1,
         body.dark h2,
@@ -1423,10 +1428,10 @@
                 <div class="eyebrow mb-2">Certifications</div>
                 <h2 class="section-title">Certifications</h2>
             </div>
-            <div class="org-row mb-6">
+            <div class="grid-three mb-6">
                 <button
                     onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')"
-                    class="org-badge" title="Preview Microsoft Azure Certificate PDF">
+                    class="org-badge w-full h-full" title="Preview Microsoft Azure Certificate PDF">
                     <span class="org-mark blue">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M1 3h10v10H1z" fill="#F25022" />
@@ -1442,7 +1447,7 @@
                     </div>
                 </button>
                 <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
-                    rel="noopener noreferrer" class="org-badge" title="View AWS Cloud Practitioner Information">
+                    rel="noopener noreferrer" class="org-badge w-full h-full" title="View AWS Cloud Practitioner Information">
                     <span class="org-mark slate">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
                             <path
@@ -1459,7 +1464,7 @@
                 </a>
                 <button
                     onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
-                    class="org-badge" title="Preview NVIDIA Certificate PDF">
+                    class="org-badge w-full h-full" title="Preview NVIDIA Certificate PDF">
                     <span class="org-mark green">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
                             <path
