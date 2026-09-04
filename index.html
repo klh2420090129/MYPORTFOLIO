@@ -69,13 +69,13 @@
         body.dark .section-card {
             background: rgba(15, 23, 42, 0.95) !important;
             border-color: rgba(59, 130, 246, 0.28) !important;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
         }
 
         body.dark .mini-card {
             background: #1e293b !important;
             border: 1px solid rgba(59, 130, 246, 0.25) !important;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
         }
 
         body.dark .org-badge,
@@ -174,11 +174,40 @@
         }
 
         body.dark nav a {
-            color: #cbd5e1 !important;
+            color: #94a3b8 !important;
         }
 
         body.dark nav a:hover {
             color: #60a5fa !important;
+        }
+
+        .nav-link {
+            position: relative;
+            padding: 0.35rem 0.65rem;
+            border-radius: 9999px;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #1d4ed8;
+            background: rgba(37, 99, 235, 0.06);
+        }
+
+        body.dark .nav-link:hover {
+            color: #60a5fa !important;
+            background: rgba(59, 130, 246, 0.12) !important;
+        }
+
+        .nav-link.active-nav {
+            color: #1d4ed8 !important;
+            background: rgba(37, 99, 235, 0.10) !important;
+            font-weight: 700;
+        }
+
+        body.dark .nav-link.active-nav {
+            color: #ffffff !important;
+            background: rgba(59, 130, 246, 0.22) !important;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
         }
 
         * {
@@ -295,14 +324,64 @@
             color: #23336b;
             font-size: 0.88rem;
             font-weight: 600;
-            border: 1px solid rgba(37, 99, 235, 0.12);
-            transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+            border: 1px solid rgba(37, 99, 235, 0.14);
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .chip:hover {
-            transform: translateY(-1px);
+            transform: translateY(-2px);
             background: #dbeafe;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.14);
+            border-color: rgba(37, 99, 235, 0.35);
+        }
+
+        body.dark .chip:hover {
+            background: #25334d !important;
+            border-color: rgba(96, 165, 250, 0.6) !important;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 12px rgba(59, 130, 246, 0.2) !important;
+        }
+
+        .skill-cat-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        body.dark .skill-cat-title {
+            color: #ffffff !important;
+        }
+
+        .skill-cat-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 9999px;
+            background: #3b82f6;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+            flex-shrink: 0;
+        }
+
+        .proj-badge {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.6rem 0.85rem;
+            border-radius: 0.85rem;
+            font-size: 0.76rem;
+            line-height: 1.35;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .proj-badge-icon {
+            margin-top: 0.15rem;
+            flex-shrink: 0;
+            color: #2563eb;
+        }
+
+        body.dark .proj-badge-icon {
+            color: #60a5fa;
         }
 
         .soft-pill {
@@ -325,35 +404,80 @@
             background: #e8f0ff;
         }
 
+        .card-shadow {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
         .card-shadow:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 22px 44px rgba(37, 99, 235, 0.12);
-            border-color: rgba(37, 99, 235, 0.28);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(37, 99, 235, 0.12);
+            border-color: rgba(37, 99, 235, 0.30);
+        }
+
+        body.dark .card-shadow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65), 0 0 16px rgba(59, 130, 246, 0.18) !important;
+            border-color: rgba(96, 165, 250, 0.45) !important;
         }
 
         .hover-lift {
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
         .hover-lift:hover {
             transform: translateY(-2px);
         }
 
+        .avatar-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-glow {
+            position: absolute;
+            inset: -12px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.28) 0%, rgba(124, 58, 237, 0.16) 50%, transparent 70%);
+            filter: blur(14px);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 0;
+        }
+
+        body.dark .avatar-glow {
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(167, 139, 250, 0.22) 50%, transparent 75%);
+            filter: blur(18px);
+        }
+
+        .avatar-container:hover .avatar-glow {
+            transform: scale(1.08);
+            opacity: 1;
+        }
+
         .avatar {
+            position: relative;
+            z-index: 1;
             width: 180px;
             height: 180px;
             border-radius: 999px;
-            border: 5px solid #2f6cf2;
-            box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
+            border: 4px solid #2f6cf2;
+            box-shadow: 0 14px 32px rgba(37, 99, 235, 0.18);
             overflow: hidden;
             background: #fff;
             flex-shrink: 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
+        body.dark .avatar {
+            border-color: #3b82f6;
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+        }
+
         .avatar:hover {
-            transform: scale(1.06);
-            box-shadow: 0 0 35px rgba(37, 99, 235, 0.5);
+            transform: scale(1.04);
+            box-shadow: 0 0 28px rgba(59, 130, 246, 0.45);
             border-color: #60a5fa;
         }
 
@@ -463,20 +587,101 @@
             font-weight: 600;
         }
 
-        @keyframes scaleUp {
-            from {
-                transform: scale(0.95);
-                opacity: 0;
-            }
+        /* Scroll Reveal & Motion System */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
 
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Entrance Keyframes */
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
             to {
-                transform: scale(1);
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .animate-scale-up {
-            animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .hero-entrance {
+            animation: heroFadeIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Enhanced Modal Transition System */
+        #certModal {
+            transition: opacity 0.22s ease, visibility 0.22s ease;
+        }
+
+        #certModal.modal-open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #certModal.modal-closed {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-card {
+            transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.24s ease;
+        }
+
+        #certModal.modal-open .modal-card {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        #certModal.modal-closed .modal-card {
+            transform: scale(0.96) translateY(8px);
+            opacity: 0;
+        }
+
+        /* Accessible Keyboard Focus-Visible Rings */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        body.dark a:focus-visible,
+        body.dark button:focus-visible {
+            outline: 2px solid #60a5fa;
+            outline-offset: 2px;
+        }
+
+        /* Micro-interactions for button links */
+        .soft-pill {
+            transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+        }
+
+        .soft-pill:active {
+            transform: scale(0.98);
+        }
+
+        /* Respect prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            ::before,
+            ::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
 
         @media (max-width: 900px) {
@@ -527,13 +732,14 @@
                 </div>
                 <span class="tracking-tight font-bold text-[#0f172a]">Ruchit Dwara</span>
             </a>
-            <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-[#334155]">
-                <a href="#about" class="hover:text-[#1d4ed8] transition-colors">About</a>
-                <a href="#education" class="hover:text-[#1d4ed8] transition-colors">Education</a>
-                <a href="#skills" class="hover:text-[#1d4ed8] transition-colors">Skills</a>
-                <a href="#experience" class="hover:text-[#1d4ed8] transition-colors">Experience</a>
-                <a href="#projects" class="hover:text-[#1d4ed8] transition-colors">Projects</a>
-                <a href="#certifications" class="hover:text-[#1d4ed8] transition-colors">Certifications</a>
+            <nav id="desktop-nav" class="hidden md:flex items-center gap-1.5 text-sm font-semibold text-[#334155]">
+                <a href="#about" class="nav-link" data-section="about">About</a>
+                <a href="#education" class="nav-link" data-section="education">Education</a>
+                <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                <a href="#github-stats" class="nav-link" data-section="github-stats">Activity</a>
+                <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+                <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+                <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
             </nav>
             <div class="flex items-center gap-2">
                 <button onclick="toggleDarkMode()" id="themeToggleBtn"
@@ -563,7 +769,7 @@
 
     <main class="shell space-y-6 md:space-y-8">
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero hero-entrance">
             <div class="grid-two items-center gap-8">
                 <div>
                     <div class="eyebrow mb-4">Portfolio</div>
@@ -583,7 +789,7 @@
                                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
                                 <circle cx="12" cy="12" r="3" />
                             </svg>
-                            <span>View Resume 👁️</span>
+                            <span>View Resume</span>
                         </button>
                         <a href="./Resume_Final.pdf" download="Ruchit_Dwara_Resume_2026.pdf" class="soft-pill">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -622,40 +828,43 @@
                 </div>
 
                 <div class="flex justify-center md:justify-end">
-                    <div class="avatar">
-                        <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara"
-                            onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
+                    <div class="avatar-container">
+                        <div class="avatar-glow"></div>
+                        <div class="avatar">
+                            <img src="./Updated%20Formal%20Pic.png" alt="Ruchit Dwara"
+                                onerror="this.src='https://ui-avatars.com/api/?name=Ruchit+Dwara&background=2f6cf2&color=fff&size=512'">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Recruiter Key Impact Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 pt-6 border-t border-blue-100/80">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8 pt-6 border-t border-blue-100/80 dark:border-slate-800">
                 <div
-                    class="mini-card text-center p-4 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 border-blue-100 hover-lift">
-                    <p class="text-3xl font-black text-[#1d4ed8]">3+</p>
-                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Industry Certifications</p>
+                    class="mini-card text-center p-4 bg-gradient-to-br from-blue-50/80 to-indigo-50/40 dark:from-slate-800 dark:to-slate-900 border-blue-100 dark:border-slate-700/80 hover-lift">
+                    <p class="text-3xl font-black text-[#1d4ed8] dark:text-blue-400">3+</p>
+                    <p class="text-xs font-semibold text-[#5b6475] dark:text-slate-400 mt-1">Industry Certifications</p>
                 </div>
                 <div
-                    class="mini-card text-center p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 border-emerald-100 hover-lift">
-                    <p class="text-3xl font-black text-[#047857]">2nd Prize</p>
-                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Innovation Competition</p>
+                    class="mini-card text-center p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/40 dark:from-slate-800 dark:to-slate-900 border-emerald-100 dark:border-slate-700/80 hover-lift">
+                    <p class="text-3xl font-black text-[#047857] dark:text-emerald-400">2nd Prize</p>
+                    <p class="text-xs font-semibold text-[#5b6475] dark:text-slate-400 mt-1">Innovation Competition</p>
                 </div>
                 <div
-                    class="mini-card text-center p-4 bg-gradient-to-br from-purple-50/80 to-indigo-50/40 border-purple-100 hover-lift">
-                    <p class="text-3xl font-black text-[#7c3aed]">150+</p>
-                    <p class="text-xs font-semibold text-[#5b6475] mt-1">Event Participants Led</p>
+                    class="mini-card text-center p-4 bg-gradient-to-br from-purple-50/80 to-indigo-50/40 dark:from-slate-800 dark:to-slate-900 border-purple-100 dark:border-slate-700/80 hover-lift">
+                    <p class="text-3xl font-black text-[#7c3aed] dark:text-purple-400">150+</p>
+                    <p class="text-xs font-semibold text-[#5b6475] dark:text-slate-400 mt-1">Event Participants Led</p>
                 </div>
                 <div
-                    class="mini-card text-center p-4 bg-gradient-to-br from-sky-50/80 to-blue-50/40 border-sky-100 hover-lift">
-                    <p class="text-3xl font-black text-[#0284c7]">500+</p>
-                    <p class="text-xs font-semibold text-[#5b6475] mt-1">GitHub Commits</p>
+                    class="mini-card text-center p-4 bg-gradient-to-br from-sky-50/80 to-blue-50/40 dark:from-slate-800 dark:to-slate-900 border-sky-100 dark:border-slate-700/80 hover-lift">
+                    <p class="text-3xl font-black text-[#0284c7] dark:text-sky-400">500+</p>
+                    <p class="text-xs font-semibold text-[#5b6475] dark:text-slate-400 mt-1">GitHub Commits</p>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section-card">
+        <section id="about" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">About</div>
                 <h2 class="section-title">About Me</h2>
@@ -674,7 +883,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="section-card">
+        <section id="education" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Education</div>
                 <h2 class="section-title">Academic Background</h2>
@@ -713,30 +922,36 @@
             <div class="grid-two">
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">Koneru Lakshmaiah Education
-                            Foundation (KLH)</p>
-                        <h3 class="text-xl font-bold text-[#0f172a] mt-2">Bachelor of Technology, Computer Science &
-                            Information Technology</h3>
-                        <p class="muted mt-1">Hyderabad, India | Expected Nov 2028</p>
-                        <ul class="mt-4 space-y-2 text-[#334155] leading-relaxed text-sm">
+                        <p class="text-xs font-bold text-[#1d4ed8] dark:text-blue-400 uppercase tracking-wider">Koneru Lakshmaiah Education Foundation (KLH)</p>
+                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white mt-1.5 leading-snug">Bachelor of Technology, Computer Science & Information Technology</h3>
+                        <p class="muted mt-1 text-sm">Hyderabad, India • Expected Nov 2028</p>
+                        <ul class="mt-4 space-y-2 text-[#334155] dark:text-slate-300 leading-relaxed text-sm">
                             <li>• Relevant coursework: Operating Systems, Databases, Computer Networks, Software Engineering, Enterprise Web Technologies</li>
                             <li>• Exploring cloud computing and cybersecurity through electives and independent study</li>
                         </ul>
                     </div>
-                    <p class="mt-6 text-xs text-[#5b6475] italic">Degree currently in progress (Expected 2028)</p>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2 flex-wrap">
+                        <span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-[#1d4ed8] dark:text-blue-400 border border-blue-200/80 dark:border-blue-800">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            In Progress (Expected 2028)
+                        </span>
+                        <a href="https://klh.edu.in/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:underline">
+                            <span>University Portal ↗</span>
+                        </a>
+                    </div>
                 </div>
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <p class="text-sm font-semibold text-[#1d4ed8] uppercase tracking-wide">The Gaudium School</p>
-                        <h3 class="text-xl font-bold text-[#0f172a] mt-2">International Baccalaureate (IB) Diploma Programme</h3>
-                        <p class="muted mt-1">Hyderabad, India</p>
-                        <p class="mt-4 text-[#334155] leading-relaxed text-sm">Built research, analytical reasoning, and time-management skills through the IB Extended Essay and Theory of Knowledge coursework.</p>
+                        <p class="text-xs font-bold text-[#1d4ed8] dark:text-blue-400 uppercase tracking-wider">The Gaudium School</p>
+                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white mt-1.5 leading-snug">International Baccalaureate (IB) Diploma Programme</h3>
+                        <p class="muted mt-1 text-sm">Hyderabad, India • Completed High School</p>
+                        <p class="mt-4 text-[#334155] dark:text-slate-300 leading-relaxed text-sm">Built rigorous research methodology, analytical reasoning, and structured project management through the IB Extended Essay and Theory of Knowledge coursework.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-2 flex-wrap">
-                        <button onclick="openCertModal('The Gaudium School - IBDP Certificates & Documents', './IBDP%20Certificates-Documents.pdf')" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors cursor-pointer">
+                        <button onclick="openCertModal('The Gaudium School - IBDP Certificates & Documents', './IBDP%20Certificates-Documents.pdf')" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700 cursor-pointer">
                             <span>🔍 Preview IBDP Paperwork</span>
                         </button>
-                        <a href="./IBDP%20Certificates-Documents.pdf" download="IBDP_Certificates_Documents_Ruchit_Dwara.pdf" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors">
+                        <a href="./IBDP%20Certificates-Documents.pdf" download="IBDP_Certificates_Documents_Ruchit_Dwara.pdf" class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                                 <polyline points="7 10 12 15 17 10" />
@@ -750,7 +965,7 @@
         </section>
 
         <!-- Skills Section with Vector Tech Icons -->
-        <section id="skills" class="section-card">
+        <section id="skills" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Skills</div>
                 <h2 class="section-title">Skills & Expertise</h2>
@@ -784,8 +999,12 @@
                     </div>
                 </a>
                 <div class="grid-two">
+                    <!-- Category 1: Programming Languages -->
                     <div class="mini-card flex flex-col justify-between h-full">
-                        <h3 class="text-xl font-bold text-[#0f172a]">Programming Languages</h3>
+                        <div class="skill-cat-title mb-4">
+                            <span class="skill-cat-dot"></span>
+                            <h3>Programming Languages</h3>
+                        </div>
                         <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-2.5 my-auto py-1 items-center">
                             <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                 <div class="flex items-center gap-2 font-semibold">
@@ -817,13 +1036,17 @@
                                         alt="SQL" class="w-4 h-4 object-contain">
                                     <span>SQL</span>
                                 </div>
-                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Faculty Database &
-                                    Queries</span>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Faculty Database & Queries</span>
                             </div>
                         </div>
                     </div>
-                    <div class="mini-card">
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Web Development & Backend</h3>
+
+                    <!-- Category 2: Web Development & Backend -->
+                    <div class="mini-card flex flex-col justify-between h-full">
+                        <div class="skill-cat-title mb-4">
+                            <span class="skill-cat-dot"></span>
+                            <h3>Web Development & Backend</h3>
+                        </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                             <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                 <div class="flex items-center gap-2 font-semibold">
@@ -851,8 +1074,8 @@
                             </div>
                             <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                 <div class="flex items-center gap-2 font-semibold">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#2563eb">
-                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="dark:stroke-blue-400">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                                     </svg>
                                     <span>REST APIs</span>
                                 </div>
@@ -860,9 +1083,9 @@
                             </div>
                             <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                 <div class="flex items-center gap-2 font-semibold">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#000000">
-                                        <path
-                                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.5 1.1 2.5 2.5 0 .9-.5 1.7-1.2 2.1l1.7 4.4h-6l1.7-4.4c-.7-.4-1.2-1.2-1.2-2.1C9.5 8.1 10.6 7 12 7z" />
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                                     </svg>
                                     <span>JWT Auth</span>
                                 </div>
@@ -878,19 +1101,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Category 3: AI / ML & Automation -->
                     <div class="mini-card flex flex-col justify-between h-full">
-                        <h3 class="text-xl font-bold text-[#0f172a]">AI / ML & Automation</h3>
-                        <div class="flex-1 flex flex-col justify-evenly my-auto pt-2 pb-1">
+                        <div class="skill-cat-title mb-4">
+                            <span class="skill-cat-dot"></span>
+                            <h3>AI / ML & Automation</h3>
+                        </div>
+                        <div class="flex-1 flex flex-col justify-evenly my-auto pt-2 pb-1 gap-2.5">
                             <div class="chip flex-col !items-start !rounded-2xl !px-4 !py-3 w-full">
                                 <div class="flex items-center gap-2 font-semibold">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED">
-                                        <path
-                                            d="M12 2l2.4 7.2L21.6 11.6l-7.2 2.4L12 21.2l-2.4-7.2L2.4 11.6l7.2-2.4L12 2z" />
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-600 dark:text-indigo-400">
+                                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
                                     </svg>
                                     <span>Generative AI</span>
                                 </div>
-                                <span class="text-[0.73rem] text-[#5b6475] font-normal mt-0.5">NVIDIA Cert & LLM
-                                    Workflows</span>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal mt-0.5">NVIDIA Cert & LLM Workflows</span>
                             </div>
                             <div class="chip flex-col !items-start !rounded-2xl !px-4 !py-3 w-full">
                                 <div class="flex items-center gap-2 font-semibold">
@@ -902,8 +1128,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mini-card">
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Tools & Platforms</h3>
+
+                    <!-- Category 4: Tools & Platforms -->
+                    <div class="mini-card flex flex-col justify-between h-full">
+                        <div class="skill-cat-title mb-4">
+                            <span class="skill-cat-dot"></span>
+                            <h3>Tools & Platforms</h3>
+                        </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                             <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                 <div class="flex items-center gap-2 font-semibold">
@@ -911,8 +1142,7 @@
                                         alt="Git" class="w-4 h-4 object-contain">
                                     <span>Git</span>
                                 </div>
-                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Version Control &
-                                    Branching</span>
+                                <span class="text-[0.73rem] text-[#5b6475] font-normal">Version Control & Branching</span>
                             </div>
                             <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                 <div class="flex items-center gap-2 font-semibold">
@@ -938,7 +1168,7 @@
                                 </div>
                                 <span class="text-[0.73rem] text-[#5b6475] font-normal">Primary IDE & Extensions</span>
                             </div>
-                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5 sm:col-span-2 sm:max-w-[50%] sm:mx-auto w-full">
+                            <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5 sm:col-span-2 sm:max-w-[60%] sm:mx-auto w-full">
                                 <div class="flex items-center gap-2 font-semibold">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
                                         alt="Linux" class="w-4 h-4 object-contain">
@@ -948,8 +1178,13 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Category 5: Cloud & Infrastructure -->
                     <div class="mini-card md:col-span-2">
-                        <h3 class="text-xl font-bold text-[#0f172a] mb-4">Cloud & Infrastructure</h3>
+                        <div class="skill-cat-title mb-4">
+                            <span class="skill-cat-dot"></span>
+                            <h3>Cloud & Infrastructure</h3>
+                        </div>
                         <div class="flex flex-col gap-2.5">
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                                 <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
@@ -970,11 +1205,10 @@
                                 </div>
                                 <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                     <div class="flex items-center gap-2 font-semibold">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#2563eb">
-                                            <circle cx="12" cy="12" r="9" stroke="#2563eb" stroke-width="2" fill="none" />
-                                            <path d="M3.6 9h16.8M3.6 15h16.8" stroke="#2563eb" stroke-width="2" />
-                                            <path d="M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z" stroke="#2563eb"
-                                                stroke-width="2" fill="none" />
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="2" y1="12" x2="22" y2="12" />
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                                         </svg>
                                         <span>Networking Fundamentals</span>
                                     </div>
@@ -984,10 +1218,10 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-2xl mx-auto w-full">
                                 <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                     <div class="flex items-center gap-2 font-semibold">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#7C3AED">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                                                stroke="#7C3AED" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" fill="none" />
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 dark:text-purple-400">
+                                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                            <polyline points="2 17 12 22 22 17" />
+                                            <polyline points="2 12 12 17 22 12" />
                                         </svg>
                                         <span>System Design</span>
                                     </div>
@@ -995,11 +1229,9 @@
                                 </div>
                                 <div class="chip flex-col !items-start !rounded-2xl !px-3.5 !py-2.5">
                                     <div class="flex items-center gap-2 font-semibold">
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0f172a">
-                                            <path
-                                                d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v5m-4 0h4"
-                                                stroke="#0f172a" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round" fill="none" />
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 dark:text-blue-400">
+                                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                                         </svg>
                                         <span>Enterprise Software</span>
                                     </div>
@@ -1013,7 +1245,7 @@
         </section>
 
         <!-- Dynamic Live GitHub Dashboard & Heatmap Section -->
-        <section id="github-stats" class="section-card">
+        <section id="github-stats" class="section-card reveal-on-scroll">
             <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div>
                     <div class="eyebrow mb-2">GitHub Activity</div>
@@ -1056,7 +1288,7 @@
                             <div class="p-3.5 rounded-2xl bg-gradient-to-br from-emerald-50/80 to-teal-50/40 dark:from-slate-800 dark:to-slate-900 border border-emerald-100 dark:border-slate-700/80 flex items-center gap-3">
                                 <span class="text-2xl">📂</span>
                                 <div>
-                                    <p id="dash-repos" class="text-xl font-black text-[#047857] dark:text-emerald-400">14</p>
+                                    <p id="dash-repos" class="text-xl font-black text-[#047857] dark:text-emerald-400">28</p>
                                     <p class="text-xs font-medium text-[#5b6475] dark:text-slate-400">Public Repos</p>
                                 </div>
                             </div>
@@ -1148,7 +1380,7 @@
                                 <p class="text-[0.7rem] text-[#5b6475] dark:text-slate-400 font-medium">Longest Streak</p>
                             </div>
                             <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60">
-                                <p id="heatmap-repos" class="text-lg font-bold text-[#7c3aed] dark:text-purple-400">14</p>
+                                <p id="heatmap-repos" class="text-lg font-bold text-[#7c3aed] dark:text-purple-400">28</p>
                                 <p class="text-[0.7rem] text-[#5b6475] dark:text-slate-400 font-medium">Repositories</p>
                             </div>
                         </div>
@@ -1181,7 +1413,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="section-card">
+        <section id="experience" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Experience</div>
                 <h2 class="section-title">Experience</h2>
@@ -1213,11 +1445,11 @@
                     <div class="flex items-center gap-2">
                         <button
                             onclick="openCertModal('Pinnacle Labs Web Development Certificate', './Internship%20Pinnacle%20Lab%20Certificate.pdf')"
-                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors cursor-pointer">
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700 cursor-pointer">
                             <span>Preview</span>
                         </button>
-                        <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors"
-                            href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download>
+                        <a class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-sm font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700"
+                            href="./Internship%20Pinnacle%20Lab%20Certificate.pdf" download="Pinnacle_Labs_Internship_Certificate_Ruchit_Dwara.pdf">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -1238,155 +1470,332 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section-card">
-            <div class="mb-5">
-                <div class="eyebrow mb-2">Projects</div>
-                <h2 class="section-title">Projects</h2>
-            </div>
-            <div class="org-row mb-6">
-                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="org-badge"
-                    title="View Projects on GitHub">
-                    <span class="org-mark blue">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
+        <section id="projects" class="section-card reveal-on-scroll">
+            <div class="mb-5 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <div class="eyebrow mb-2">Featured Projects</div>
+                    <h2 class="section-title">Selected Engineering Projects</h2>
+                    <p class="text-xs md:text-sm text-[#5b6475] dark:text-slate-400 mt-1 max-w-2xl">
+                        Featured technical implementations spanning compiler systems, cloud infrastructure, autonomous vehicle simulation, and civic technology.
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="soft-pill !text-xs !py-1.5 !px-3">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                         </svg>
-                    </span>
-                    <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Applied
-                            Systems ↗</p>
-                        <p class="text-xs text-[#5b6475]">Full-stack & cloud projects</p>
-                    </div>
-                </a>
-                <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="org-badge"
-                    title="View Business Value Projects on GitHub">
-                    <span class="org-mark slate">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path d="M1 3h10v10H1z" fill="#F25022" />
-                            <path d="M13 3h10v10H13z" fill="#7FBA00" />
-                            <path d="M1 15h10v10H1z" fill="#00A4EF" />
-                            <path d="M13 15h10v10H1z" fill="#FFB900" />
-                        </svg>
-                    </span>
-                    <div>
-                        <p class="text-sm font-semibold text-[#0f172a] hover:text-[#1d4ed8] transition-colors">Business
-                            Value ↗</p>
-                        <p class="text-xs text-[#5b6475]">Built for practical impact</p>
-                    </div>
-                </a>
+                        <span>GitHub Profile ↗</span>
+                    </a>
+                </div>
             </div>
-            <div class="grid-three">
+
+            <div class="grid-two gap-6">
+                <!-- Project 1: CodeFlow Compiler Design Laboratory -->
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white">Faculty Student Management System</h3>
-                        <p class="muted mt-2 text-sm leading-relaxed">A full-stack platform to streamline student, faculty, and academic management with a secure role-based interface.</p>
-                        
-                        <div class="mt-4 space-y-2 text-xs text-[#334155] dark:text-slate-300">
-                            <div class="p-2 rounded-xl bg-blue-50/70 dark:bg-slate-800/80 border border-blue-100 dark:border-slate-700/80">
-                                <p class="font-bold text-[#1d4ed8] dark:text-blue-400">👥 Users:</p>
-                                <p class="mt-0.5">Student / Faculty / Admin</p>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-black text-sm">
+                                    ⚙️
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">CodeFlow Compiler Design Laboratory</h3>
+                                    <span class="text-[0.7rem] font-bold text-indigo-600 dark:text-indigo-400 tracking-wider uppercase">Systems & Compiler Engineering</span>
+                                </div>
                             </div>
-                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/80">
-                                <p class="font-bold text-[#0f172a] dark:text-white">⚙️ Features:</p>
-                                <p class="mt-0.5">• Authentication • Dashboard • Database CRUD • Role Management</p>
+                        </div>
+
+                        <p class="muted mt-3 text-sm leading-relaxed">
+                            A multi-phase compiler system and virtual machine for MiniLang, an educational strongly-typed language, translating source code through strict compilation phases down to bytecode execution.
+                        </p>
+
+                        <div class="mt-4 space-y-2 text-xs">
+                            <div class="proj-badge bg-indigo-50/60 dark:bg-slate-800/80 border border-indigo-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-indigo-600 dark:text-indigo-400">
+                                    <polyline points="16 18 22 12 16 6" />
+                                    <polyline points="8 6 2 12 8 18" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-indigo-700 dark:text-indigo-300 block">Core Pipeline</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Lexer • Recursive-Descent AST • Semantic Analyzer • Symbol Table • TAC IR</span>
+                                </div>
                             </div>
-                            <div class="p-2 rounded-xl bg-emerald-50/70 dark:bg-slate-800/80 border border-emerald-100 dark:border-slate-700/80">
-                                <p class="font-bold text-[#047857] dark:text-emerald-400">🚀 Deployment:</p>
-                                <p class="mt-0.5">Vercel + MySQL</p>
+                            <div class="proj-badge bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-slate-600 dark:text-slate-400">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#0f172a] dark:text-white block">Execution Engine</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Dead-Code & Constant Folding Optimizer • Bytecode VM with Execution Tracing</span>
+                                </div>
+                            </div>
+                            <div class="proj-badge bg-emerald-50/60 dark:bg-slate-800/80 border border-emerald-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-emerald-600 dark:text-emerald-400">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                    <polyline points="22 4 12 14.01 9 11.01" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#047857] dark:text-emerald-400 block">Verification & Tests</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Pytest test suite across all 8 pipeline modules (Lexer, Parser, TAC, VM)</span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="mt-4 flex flex-wrap gap-1.5">
-                            <span class="chip text-xs">HTML</span><span class="chip text-xs">CSS</span><span class="chip text-xs">JavaScript</span><span class="chip text-xs">MySQL</span><span class="chip text-xs">Vercel</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Python</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">AST</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Three-Address Code</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Virtual Machine</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Flask</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Pytest</span>
                         </div>
                     </div>
-                    <div class="card-actions border-t border-blue-50 dark:border-slate-800 pt-4 mt-6">
-                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors">
+
+                    <div class="card-actions border-t border-slate-100 dark:border-slate-800 pt-4 mt-5 flex items-center justify-between">
+                        <a href="https://github.com/klh2420090129/codeflow-compiler" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
-                            <span>View Code Repository ↗</span>
+                            <span>View Repository ↗</span>
                         </a>
+                        <span class="text-[0.7rem] font-semibold text-[#5b6475] dark:text-slate-400">Open-Source Laboratory</span>
                     </div>
                 </div>
+
+                <!-- Project 2: Unified Cloud Monitoring Dashboard -->
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white">Scheme Finder</h3>
-                        <p class="muted mt-2 text-sm leading-relaxed">A web platform that helps users discover government schemes based on eligibility, with simple navigation and practical usefulness.</p>
-                        
-                        <div class="mt-4 space-y-2 text-xs text-[#334155] dark:text-slate-300">
-                            <div class="p-2 rounded-xl bg-blue-50/70 dark:bg-slate-800/80 border border-blue-100 dark:border-slate-700/80">
-                                <p class="font-bold text-[#1d4ed8] dark:text-blue-400">👥 Users:</p>
-                                <p class="mt-0.5">General Public / Citizens</p>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 flex items-center justify-center font-black text-sm">
+                                    📊
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">Unified Cloud Monitoring Dashboard</h3>
+                                    <span class="text-[0.7rem] font-bold text-blue-600 dark:text-blue-400 tracking-wider uppercase">Cloud Infrastructure & SRE Telemetry</span>
+                                </div>
                             </div>
-                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/80">
-                                <p class="font-bold text-[#0f172a] dark:text-white">⚙️ Features:</p>
-                                <p class="mt-0.5">• Scheme Search • Eligibility Filters • Real-Time Sorting • Category Discovery</p>
+                        </div>
+
+                        <p class="muted mt-3 text-sm leading-relaxed">
+                            A full-stack cloud operations simulator replicating AWS CloudWatch and Datadog architectures, streaming real-time VM/container metrics, automated autoscaling, and cost analysis.
+                        </p>
+
+                        <div class="mt-4 space-y-2 text-xs">
+                            <div class="proj-badge bg-blue-50/60 dark:bg-slate-800/80 border border-blue-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-blue-600 dark:text-blue-400">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                                    <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                                    <line x1="12" y1="20" x2="12.01" y2="20" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#1d4ed8] dark:text-blue-400 block">Real-Time Telemetry</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Socket.io bi-directional live streams for CPU, memory, and network throughput</span>
+                                </div>
                             </div>
-                            <div class="p-2 rounded-xl bg-emerald-50/70 dark:bg-slate-800/80 border border-emerald-100 dark:border-slate-700/80">
-                                <p class="font-bold text-[#047857] dark:text-emerald-400">🚀 Deployment:</p>
-                                <p class="mt-0.5">Vercel + GitHub Pages</p>
+                            <div class="proj-badge bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-slate-600 dark:text-slate-400">
+                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#0f172a] dark:text-white block">Multi-Region & Containers</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Simulates us-east-1, us-west-2, eu-west-1 • Pod groupings & container health drilldowns</span>
+                                </div>
+                            </div>
+                            <div class="proj-badge bg-emerald-50/60 dark:bg-slate-800/80 border border-emerald-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-emerald-600 dark:text-emerald-400">
+                                    <path d="M12 2v20" />
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#047857] dark:text-emerald-400 block">SRE Automation & Security</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Autoscaling policies • Incident alert simulation • Cost impact rates • JWT RBAC auth</span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="mt-4 flex flex-wrap gap-1.5">
-                            <span class="chip text-xs">JavaScript</span><span class="chip text-xs">HTML</span><span class="chip text-xs">CSS</span><span class="chip text-xs">Filters</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Node.js</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Express</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Socket.io</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">React</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Tailwind</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">MongoDB</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Docker Compose</span>
                         </div>
                     </div>
-                    <div class="card-actions border-t border-blue-50 dark:border-slate-800 pt-4 mt-6">
-                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors">
+
+                    <div class="card-actions border-t border-slate-100 dark:border-slate-800 pt-4 mt-5 flex items-center justify-between">
+                        <a href="https://github.com/klh2420090129/Unified-Monitoring-Dashboard-VMs-Containers-Simulation-" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                             </svg>
-                            <span>View Code Repository ↗</span>
+                            <span>View Repository ↗</span>
                         </a>
+                        <span class="text-[0.7rem] font-semibold text-[#5b6475] dark:text-slate-400">Dockerized Architecture</span>
                     </div>
                 </div>
+
+                <!-- Project 3: Lane Assist ADAS Simulator -->
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <h3 class="text-xl font-bold text-[#0f172a] dark:text-white">Portfolio Website</h3>
-                        <p class="muted mt-2 text-sm leading-relaxed">A clean, responsive personal site built to present my background, projects, and achievements in a professional format.</p>
-                        
-                        <div class="mt-4 space-y-2 text-xs text-[#334155] dark:text-slate-300">
-                            <div class="p-2 rounded-xl bg-blue-50/70 dark:bg-slate-800/80 border border-blue-100 dark:border-slate-700/80">
-                                <p class="font-bold text-[#1d4ed8] dark:text-blue-400">👥 Users:</p>
-                                <p class="mt-0.5">Recruiters / Hiring Managers / Engineers</p>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-lg bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black text-sm">
+                                    🚗
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">Lane Assist ADAS Web Simulator</h3>
+                                    <span class="text-[0.7rem] font-bold text-teal-600 dark:text-teal-400 tracking-wider uppercase">Kinematics & Control Systems Simulation</span>
+                                </div>
                             </div>
-                            <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/80">
-                                <p class="font-bold text-[#0f172a] dark:text-white">⚙️ Features:</p>
-                                <p class="mt-0.5">• Lightbox Preview • GitHub API Sync • Dark Mode • Glassmorphism</p>
+                        </div>
+
+                        <p class="muted mt-3 text-sm leading-relaxed">
+                            An interactive vehicle simulation modeling Lane Departure Warning (LDW) and Lane Keeping Assist (LKA) control loops, evaluating lateral offset, road curvature, and Time-to-Lane-Crossing.
+                        </p>
+
+                        <div class="mt-4 space-y-2 text-xs">
+                            <div class="proj-badge bg-teal-50/60 dark:bg-slate-800/80 border border-teal-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-teal-600 dark:text-teal-400">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-teal-700 dark:text-teal-300 block">Kinematics & TTLC Prediction</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Continuous Time-to-Lane-Crossing calculation, lateral velocity, and heading error modeling</span>
+                                </div>
                             </div>
-                            <div class="p-2 rounded-xl bg-emerald-50/70 dark:bg-slate-800/80 border border-emerald-100 dark:border-slate-700/80">
-                                <p class="font-bold text-[#047857] dark:text-emerald-400">🚀 Deployment:</p>
-                                <p class="mt-0.5">GitHub Pages + Vite + Tailwind</p>
+                            <div class="proj-badge bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-slate-600 dark:text-slate-400">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#0f172a] dark:text-white block">Closed-Loop Control</span>
+                                    <span class="text-[#334155] dark:text-slate-300">LKA corrective torque controller counteracting drift with smooth recentering physics</span>
+                                </div>
+                            </div>
+                            <div class="proj-badge bg-emerald-50/60 dark:bg-slate-800/80 border border-emerald-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-emerald-600 dark:text-emerald-400">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#047857] dark:text-emerald-400 block">Synthesized Audio & Telemetry</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Web Audio API multi-frequency warning beeps • Real-time CSV flight-telemetry export</span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="mt-4 flex flex-wrap gap-1.5">
-                            <span class="chip text-xs">React</span><span class="chip text-xs">Tailwind</span><span class="chip text-xs">Vite</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">TypeScript</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">React</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Kinematics</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Canvas API</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Web Audio API</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Tailwind</span>
                         </div>
                     </div>
-                    <div class="card-actions border-t border-blue-50 dark:border-slate-800 pt-4 mt-6 flex flex-wrap gap-2">
-                        <a href="https://klh2420090129.github.io/MYPORTFOLIO/" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-1.5 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3 py-1.5 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors">
-                            <span>Live Site ↗</span>
+
+                    <div class="card-actions border-t border-slate-100 dark:border-slate-800 pt-4 mt-5 flex items-center justify-between">
+                        <a href="https://github.com/klh2420090129/Lane-Departure-Warning-System-Web-Simulator-" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            <span>View Repository ↗</span>
                         </a>
-                        <a href="https://github.com/klh2420090129/MYPORTFOLIO" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center gap-1.5 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3 py-1.5 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] transition-colors">
-                            <span>GitHub Repo ↗</span>
+                        <span class="text-[0.7rem] font-semibold text-[#5b6475] dark:text-slate-400">Interactive Simulation</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: Scheme Finder (Award Winner) -->
+                <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
+                    <div>
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 text-amber-600 dark:text-amber-400 flex items-center justify-center font-black text-sm">
+                                    🏆
+                                </span>
+                                <div>
+                                    <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">Scheme Finder</h3>
+                                    <span class="text-[0.7rem] font-bold text-amber-600 dark:text-amber-400 tracking-wider uppercase">Civic Tech & Innovation Winner</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="muted mt-3 text-sm leading-relaxed">
+                            A civic web application matching citizens with relevant government welfare schemes and student scholarships through dynamic multi-attribute eligibility filtering.
+                        </p>
+
+                        <div class="mt-4 space-y-2 text-xs">
+                            <div class="proj-badge bg-amber-50/60 dark:bg-slate-800/80 border border-amber-200/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-amber-600 dark:text-amber-400">
+                                    <circle cx="12" cy="8" r="7" />
+                                    <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-amber-700 dark:text-amber-300 block">Competition Recognition</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Awarded 2nd Prize (Runner-Up) at KL University Innovation Competition</span>
+                                </div>
+                            </div>
+                            <div class="proj-badge bg-slate-50 dark:bg-slate-800/80 border border-slate-200/60 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-slate-600 dark:text-slate-400">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#0f172a] dark:text-white block">Multi-Attribute Discovery</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Income criteria, education level, and demographic filtering algorithms</span>
+                                </div>
+                            </div>
+                            <div class="proj-badge bg-emerald-50/60 dark:bg-slate-800/80 border border-emerald-100/80 dark:border-slate-700/70">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="proj-badge-icon text-emerald-600 dark:text-emerald-400">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold text-[#047857] dark:text-emerald-400 block">Civic Impact</span>
+                                    <span class="text-[#334155] dark:text-slate-300">Designed to bridge awareness gaps for underprivileged scholarship applicants</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 flex flex-wrap gap-1.5">
+                            <span class="chip !text-xs !py-1 !px-2.5">JavaScript</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">HTML5</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">CSS3</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Eligibility Filters</span>
+                            <span class="chip !text-xs !py-1 !px-2.5">Civic Tech</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions border-t border-slate-100 dark:border-slate-800 pt-4 mt-5 flex items-center justify-between">
+                        <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-3.5 py-2 text-xs font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            <span>Developer Profile ↗</span>
                         </a>
+                        <span class="text-[0.7rem] font-semibold text-amber-600 dark:text-amber-400">2nd Prize Award Winner</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Achievements Section -->
-        <section id="achievements" class="section-card">
+        <section id="achievements" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Achievements</div>
                 <h2 class="section-title">Achievements</h2>
@@ -1401,7 +1810,7 @@
         </section>
 
         <!-- Responsibility Section -->
-        <section id="responsibility" class="section-card">
+        <section id="responsibility" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Position of Responsibility</div>
                 <h2 class="section-title">Leadership & Responsibility</h2>
@@ -1423,7 +1832,7 @@
         </section>
 
         <!-- Certifications Section -->
-        <section id="certifications" class="section-card">
+        <section id="certifications" class="section-card reveal-on-scroll">
             <div class="mb-5">
                 <div class="eyebrow mb-2">Certifications</div>
                 <h2 class="section-title">Certifications</h2>
@@ -1479,12 +1888,13 @@
                 </button>
             </div>
             <div class="grid-three">
+                <!-- Cert 1: Microsoft Azure AI Fundamentals -->
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-start gap-3">
                             <button
                                 onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')"
-                                class="org-mark blue hover:scale-105 transition-transform cursor-pointer"
+                                class="org-mark blue hover:scale-105 transition-transform cursor-pointer flex-shrink-0"
                                 title="Preview Microsoft Azure Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path d="M1 3h10v10H1z" fill="#F25022" />
@@ -1493,18 +1903,21 @@
                                     <path d="M13 15h10v10H1z" fill="#FFB900" />
                                 </svg>
                             </button>
-                            <h3 class="text-xl font-bold text-[#0f172a]">Microsoft Certified: Azure AI Fundamentals</h3>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">Microsoft Certified: Azure AI Fundamentals</h3>
+                                <p class="muted mt-1 text-sm font-semibold text-[#1d4ed8] dark:text-blue-400">AI-900</p>
+                            </div>
                         </div>
-                        <p class="muted mt-3 text-sm">AI-900</p>
+                        <p class="mt-3 text-sm text-[#334155] dark:text-slate-300 leading-relaxed">Fundamental concepts of machine learning and artificial intelligence on Microsoft Azure cloud services.</p>
                     </div>
-                    <div class="mt-6 flex flex-col gap-2">
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
                         <button
                             onclick="openCertModal('Microsoft Azure AI Fundamentals Certificate', './Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf')"
-                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1d4ed8] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1e40af] transition-colors shadow-sm cursor-pointer">
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1d4ed8] hover:bg-[#1e40af] dark:bg-blue-600 dark:hover:bg-blue-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors shadow-sm cursor-pointer">
                             <span>🔍 Preview Certificate</span>
                         </button>
-                        <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download
-                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <a href="./Credentials%20-%20RuchitDwara-0945%20_%20Microsoft%20Learn.pdf" download="Microsoft_Azure_AI_Fundamentals_Ruchit_Dwara.pdf"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-4 py-2 text-sm font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -1515,11 +1928,13 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Cert 2: AWS Certified Cloud Practitioner -->
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-start gap-3">
                             <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
-                                rel="noopener noreferrer" class="org-mark slate hover:scale-105 transition-transform"
+                                rel="noopener noreferrer" class="org-mark slate hover:scale-105 transition-transform flex-shrink-0"
                                 title="AWS Cloud Practitioner Information">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
                                     <path
@@ -1528,37 +1943,57 @@
                                         d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z" />
                                 </svg>
                             </a>
-                            <h3 class="text-xl font-bold text-[#0f172a]">AWS Certified Cloud Practitioner</h3>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">AWS Certified Cloud Practitioner</h3>
+                                <p class="muted mt-1 text-sm font-semibold text-amber-600 dark:text-amber-400">Foundational Cloud</p>
+                            </div>
                         </div>
-                        <p class="muted mt-3 text-sm">Foundational cloud certification</p>
+                        <p class="mt-3 text-sm text-[#334155] dark:text-slate-300 leading-relaxed">Core AWS cloud fluency, architectural principles, security fundamentals, and global cloud infrastructure.</p>
                     </div>
-                    <p class="mt-6 text-sm text-[#5b6475] italic">Certificate available on request.</p>
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
+                        <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors shadow-sm">
+                            <span>AWS Certification Info ↗</span>
+                        </a>
+                        <div class="flex items-center justify-center gap-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 px-4 py-2 text-xs font-semibold text-[#5b6475] dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-700">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="16" x2="12" y2="12" />
+                                <line x1="12" y1="8" x2="12.01" y2="8" />
+                            </svg>
+                            <span>Certificate available on request</span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Cert 3: NVIDIA Fundamentals of Accelerated Data Science -->
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex items-start gap-3">
                             <button
                                 onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
-                                class="org-mark green hover:scale-105 transition-transform cursor-pointer"
+                                class="org-mark green hover:scale-105 transition-transform cursor-pointer flex-shrink-0"
                                 title="Preview NVIDIA Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#76B900">
                                     <path
                                         d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c-2.49 0-4.5-2.02-4.5-4.5s2.01-4.5 4.5-4.5c1.46 0 2.77.7 3.59 1.79l-1.64 1.24c-.48-.65-1.17-1.03-1.95-1.03-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5c.88 0 1.64-.45 2.08-1.14l1.65 1.22c-.74 1.15-2.07 1.96-3.56 1.96z" />
                                 </svg>
                             </button>
-                            <h3 class="text-xl font-bold text-[#0f172a]">NVIDIA - Fundamentals of Accelerated Data
-                                Science</h3>
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">NVIDIA - Fundamentals of Accelerated Data Science</h3>
+                                <p class="muted mt-1 text-sm font-semibold text-emerald-600 dark:text-emerald-400">AI & Data Science</p>
+                            </div>
                         </div>
-                        <p class="muted mt-3 text-sm">AI and data science foundations</p>
+                        <p class="mt-3 text-sm text-[#334155] dark:text-slate-300 leading-relaxed">Foundational data science pipelines, GPU acceleration principles, and accelerated analytics workflows.</p>
                     </div>
-                    <div class="mt-6 flex flex-col gap-2">
+                    <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
                         <button
                             onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
-                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#047857] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#065f46] transition-colors shadow-sm cursor-pointer">
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#047857] hover:bg-[#065f46] dark:bg-emerald-600 dark:hover:bg-emerald-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors shadow-sm cursor-pointer">
                             <span>🔍 Preview Certificate</span>
                         </button>
-                        <a href="./NVIDIA_2420090129.pdf" download
-                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] px-4 py-2.5 text-sm font-semibold text-[#1d4ed8] hover:bg-[#dbeafe] transition-colors">
+                        <a href="./NVIDIA_2420090129.pdf" download="NVIDIA_Accelerated_Data_Science_Ruchit_Dwara.pdf"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-4 py-2 text-sm font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -1578,32 +2013,32 @@
     </main>
 
     <!-- Floating Back to Top Button -->
-    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top"
         class="fixed bottom-6 left-6 z-50 w-11 h-11 rounded-full bg-[#1d4ed8] text-white shadow-xl flex items-center justify-center text-lg font-bold transition-all duration-300 opacity-0 translate-y-10 pointer-events-none hover:bg-[#1e40af] hover:scale-110" title="Back to Top">
         ↑
     </button>
 
     <!-- Glassmorphism Lightbox Modal Overlay for PDF Certificate Viewer -->
-    <div id="certModal"
-        class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-md hidden items-center justify-center p-3 md:p-6 transition-opacity">
+    <div id="certModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        class="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-3 md:p-6 modal-closed">
         <div
-            class="bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full h-[85vh] flex flex-col shadow-2xl border border-blue-100 dark:border-slate-800 overflow-hidden animate-scale-up">
+            class="modal-card bg-white dark:bg-slate-900 rounded-3xl max-w-4xl w-full h-[85vh] flex flex-col shadow-2xl border border-blue-100 dark:border-slate-800 overflow-hidden">
             <div class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/80 dark:bg-slate-800/80">
                 <h3 id="modalTitle" class="text-lg font-bold text-[#0f172a] dark:text-white">Certificate Preview</h3>
                 <div class="flex items-center gap-3">
                     <a id="modalDownloadBtn" href="#" download class="soft-pill text-xs py-1.5 px-3">Download PDF</a>
-                    <button onclick="closeCertModal()"
+                    <button onclick="closeCertModal()" aria-label="Close modal"
                         class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-700 dark:text-slate-200 font-bold flex items-center justify-center transition-colors cursor-pointer">✕</button>
                 </div>
             </div>
             <div class="flex-1 bg-slate-100 dark:bg-slate-950 p-2">
-                <iframe id="modalIframe" src="" class="w-full h-full rounded-2xl border-0"></iframe>
+                <iframe id="modalIframe" title="PDF Document Viewer" src="" class="w-full h-full rounded-2xl border-0"></iframe>
             </div>
         </div>
     </div>
 
     <!-- Copy Email Toast Alert -->
-    <div id="toast"
+    <div id="toast" role="status" aria-live="polite"
         class="fixed bottom-6 right-6 z-50 bg-[#0f172a] text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none">
         <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
         <span class="text-sm font-semibold">Email copied to clipboard! (ruchit2003@gmail.com)</span>
@@ -1701,24 +2136,44 @@
         }
 
         // Modal PDF Certificate Lightbox
+        let lastFocusedElement = null;
+
         function openCertModal(title, pdfUrl) {
+            lastFocusedElement = document.activeElement;
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalIframe').src = pdfUrl;
             document.getElementById('modalDownloadBtn').href = pdfUrl;
             const modal = document.getElementById('certModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            modal.classList.remove('modal-closed');
+            modal.classList.add('modal-open');
+            document.body.style.overflow = 'hidden';
+            const closeBtn = modal.querySelector('button[aria-label="Close modal"]');
+            if (closeBtn) closeBtn.focus();
         }
 
         function closeCertModal() {
             const modal = document.getElementById('certModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-            document.getElementById('modalIframe').src = '';
+            modal.classList.remove('modal-open');
+            modal.classList.add('modal-closed');
+            document.body.style.overflow = '';
+            setTimeout(() => {
+                if (modal.classList.contains('modal-closed')) {
+                    document.getElementById('modalIframe').src = '';
+                }
+            }, 250);
+            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                lastFocusedElement.focus();
+            }
         }
 
         document.getElementById('certModal').addEventListener('click', (e) => {
             if (e.target.id === 'certModal') {
+                closeCertModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
                 closeCertModal();
             }
         });
@@ -1729,7 +2184,7 @@
                 const userRes = await fetch('https://api.github.com/users/klh2420090129');
                 if (userRes.ok) {
                     const userData = await userRes.json();
-                    const reposCount = userData.public_repos || 14;
+                    const reposCount = userData.public_repos || 28;
                     const followersCount = userData.followers || 0;
                     
                     ['gh-repos', 'dash-repos', 'heatmap-repos'].forEach(id => {
@@ -1767,12 +2222,73 @@
                 }
             } catch (e) {
                 console.log('GitHub live API fallback:', e);
+                const container = document.getElementById('gh-repos-container');
+                if (container && container.innerHTML.includes('Loading live repositories')) {
+                    container.innerHTML = `
+                        <div class="mini-card p-4 sm:col-span-2 md:col-span-3 text-center text-xs text-[#5b6475] dark:text-slate-400">
+                            Repositories available directly at <a href="https://github.com/klh2420090129" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#1d4ed8] dark:text-blue-400 hover:underline">github.com/klh2420090129 ↗</a>
+                        </div>
+                    `;
+                }
             }
+        }
+
+        // Active Navigation ScrollSpy via IntersectionObserver
+        function initScrollSpy() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            if (!sections.length || !navLinks.length) return;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '-20% 0px -70% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const activeId = entry.target.getAttribute('id');
+                        navLinks.forEach((link) => {
+                            if (link.getAttribute('data-section') === activeId) {
+                                link.classList.add('active-nav');
+                            } else {
+                                link.classList.remove('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach((sec) => observer.observe(sec));
+        }
+
+        // Motion Scroll Reveal for Section Cards
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+            if (!revealElements.length) return;
+
+            const revealObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px 0px -8% 0px',
+                threshold: 0.05
+            });
+
+            revealElements.forEach((el) => revealObserver.observe(el));
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             typeEffect();
             fetchGitHubData();
+            initScrollSpy();
+            initScrollReveal();
         });
     </script>
 </body>
