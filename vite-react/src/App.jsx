@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { links } from './config.js'
 
 const skills = {
@@ -8,6 +8,30 @@ const skills = {
   tools: ['Git', 'GitHub', 'Postman', 'VS Code', 'Linux'],
   cloud: ['Microsoft Azure', 'AWS (Foundational)', 'Networking Fundamentals', 'System Design', 'Enterprise Software'],
 }
+
+const certifications = [
+  {
+    org: 'MS',
+    tone: 'blue',
+    title: 'Microsoft Certified: Azure AI Fundamentals',
+    subtitle: 'AI-900 · Fundamental concepts of machine learning and artificial intelligence on Microsoft Azure cloud services.',
+    file: 'Credentials - RuchitDwara-0945 _ Microsoft Learn.pdf'
+  },
+  {
+    org: 'AWS',
+    tone: 'slate',
+    title: 'AWS Certified Cloud Practitioner',
+    subtitle: 'CLF-C02 · Core AWS cloud fluency, architectural principles, security fundamentals, and global cloud infrastructure.',
+    file: 'AWS Certified Cloud Practitioner certificate.pdf'
+  },
+  {
+    org: 'NV',
+    tone: 'green',
+    title: 'NVIDIA - Fundamentals of Accelerated Data Science',
+    subtitle: 'Accelerated Data Science & GPU Acceleration Workflows.',
+    file: 'NVIDIA_2420090129.pdf'
+  }
+]
 
 const projects = [
   {
@@ -531,7 +555,7 @@ export default function App() {
             <SectionHeader eyebrow="Certifications" title="Certifications" />
             <SectionOrgRow items={[
               { label: 'MS', name: 'Microsoft', caption: 'Azure AI Fundamentals Certificate', tone: 'blue', href: `${base}${encodeURIComponent('Credentials - RuchitDwara-0945 _ Microsoft Learn.pdf')}` },
-              { label: 'AWS', name: 'Amazon Web Services', caption: 'Cloud Practitioner', tone: 'slate', href: 'https://aws.amazon.com/certification/certified-cloud-practitioner/' },
+              { label: 'AWS', name: 'Amazon Web Services', caption: 'Cloud Practitioner Certificate', tone: 'slate', href: `${base}${encodeURIComponent('AWS Certified Cloud Practitioner certificate.pdf')}` },
               { label: 'NV', name: 'NVIDIA', caption: 'Accelerated Data Science Certificate', tone: 'green', href: `${base}${encodeURIComponent('NVIDIA_2420090129.pdf')}` },
             ]} />
             <div className="grid gap-4 md:grid-cols-3">

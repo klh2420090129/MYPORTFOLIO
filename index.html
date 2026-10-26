@@ -1855,8 +1855,9 @@
                         <p class="text-xs text-[#5b6475]">Azure AI Fundamentals Certificate</p>
                     </div>
                 </button>
-                <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
-                    rel="noopener noreferrer" class="org-badge w-full h-full" title="View AWS Cloud Practitioner Information">
+                <button
+                    onclick="openCertModal('AWS Certified Cloud Practitioner Certificate', './AWS%20Certified%20Cloud%20Practitioner%20certificate.pdf')"
+                    class="org-badge w-full h-full" title="Preview AWS Certified Cloud Practitioner Certificate PDF">
                     <span class="org-mark slate">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
                             <path
@@ -1867,10 +1868,10 @@
                     </span>
                     <div>
                         <p class="text-sm font-semibold text-[#0f172a] hover:text-[#334155] transition-colors">Amazon
-                            Web Services ↗</p>
-                        <p class="text-xs text-[#5b6475]">Cloud Practitioner</p>
+                            Web Services 🔍</p>
+                        <p class="text-xs text-[#5b6475]">Cloud Practitioner Certificate</p>
                     </div>
-                </a>
+                </button>
                 <button
                     onclick="openCertModal('NVIDIA Accelerated Data Science Certificate', './NVIDIA_2420090129.pdf')"
                     class="org-badge w-full h-full" title="Preview NVIDIA Certificate PDF">
@@ -1933,36 +1934,40 @@
                 <div class="mini-card card-shadow hover-lift flex flex-col justify-between h-full">
                     <div>
                         <div class="flex items-start gap-3">
-                            <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"
-                                rel="noopener noreferrer" class="org-mark slate hover:scale-105 transition-transform flex-shrink-0"
-                                title="AWS Cloud Practitioner Information">
+                            <button
+                                onclick="openCertModal('AWS Certified Cloud Practitioner Certificate', './AWS%20Certified%20Cloud%20Practitioner%20certificate.pdf')"
+                                class="org-mark slate hover:scale-105 transition-transform cursor-pointer flex-shrink-0"
+                                title="Preview AWS Certified Cloud Practitioner Certificate">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="#FF9900">
                                     <path
                                         d="M6.76 10.03c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm2.3 4.36c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm3.84 0c.27 0 .5-.06.7-.18a1.27 1.27 0 00.44-.49v.54h1V9.01h-1v.54a1.27 1.27 0 00-.44-.49c-.2-.12-.43-.18-.7-.18-.38 0-.72.1-.1.29a2.17 2.17 0 00-.74.8c-.18.34-.27.73-.27 1.17 0 .44.09.83.27 1.17.18.34.43.61.74.8.3.19.65.29 1.03.29zm2.3-4.36c0 .21.05.4.15.58.1.18.23.32.41.4.18.1.39.15.62.15.27 0 .5-.07.68-.2a1.33 1.33 0 00.44-.54v.49a1 1 0 00-.41-.4c-.17-.1-.38-.15-.62-.15s-.45.05-.62.15a1.09 1.09 0 00-.41.4 1.26 1.26 0 00-.15.57zm6.54-1.92h-1.13l-.9 3.52-.9-3.52h-1.13l-.9 3.52-.9-3.52h-1.12l1.45 4.9h1.13l.9-3.44.9 3.44h1.13l1.45-4.9z" />
                                     <path
                                         d="M6.29 18.07c3.48 1.83 7.9 1.95 11.7.35.21-.09.14-.34-.08-.26-2.62 1.06-5.84.99-8.5-.28-1.4-.67-2.74-1.57-3.32-2-.2-.14-.37.08-.2.23.66.62 1.77 1.39 2.4 1.96z" />
                                 </svg>
-                            </a>
+                            </button>
                             <div>
                                 <h3 class="text-xl font-bold text-[#0f172a] dark:text-white leading-snug">AWS Certified Cloud Practitioner</h3>
-                                <p class="muted mt-1 text-sm font-semibold text-amber-600 dark:text-amber-400">Foundational Cloud</p>
+                                <p class="muted mt-1 text-sm font-semibold text-amber-600 dark:text-amber-400">CLF-C02 Certified</p>
                             </div>
                         </div>
-                        <p class="mt-3 text-sm text-[#334155] dark:text-slate-300 leading-relaxed">Core AWS cloud fluency, architectural principles, security fundamentals, and global cloud infrastructure.</p>
+                        <p class="mt-3 text-sm text-[#334155] dark:text-slate-300 leading-relaxed">Core AWS cloud fluency, architectural principles, security fundamentals, billing & pricing models, and global infrastructure.</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-2">
-                        <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank" rel="noopener noreferrer"
-                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors shadow-sm">
-                            <span>AWS Certification Info ↗</span>
-                        </a>
-                        <div class="flex items-center justify-center gap-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 px-4 py-2 text-xs font-semibold text-[#5b6475] dark:text-slate-400 border border-dashed border-slate-300 dark:border-slate-700">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10" />
-                                <line x1="12" y1="16" x2="12" y2="12" />
-                                <line x1="12" y1="8" x2="12.01" y2="8" />
+                        <button
+                            onclick="openCertModal('AWS Certified Cloud Practitioner Certificate', './AWS%20Certified%20Cloud%20Practitioner%20certificate.pdf')"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#d97706] hover:bg-[#b45309] dark:bg-amber-600 dark:hover:bg-amber-700 px-4 py-2.5 text-sm font-semibold text-white transition-colors shadow-sm cursor-pointer">
+                            <span>🔍 Preview Certificate</span>
+                        </button>
+                        <a href="./AWS%20Certified%20Cloud%20Practitioner%20certificate.pdf" download="AWS_Certified_Cloud_Practitioner_Ruchit_Dwara.pdf"
+                            class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eff5ff] dark:bg-slate-800 px-4 py-2 text-sm font-semibold text-[#1d4ed8] dark:text-blue-400 hover:bg-[#dbeafe] dark:hover:bg-slate-700/80 transition-colors border border-transparent dark:border-slate-700">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
                             </svg>
-                            <span>Certificate available on request</span>
-                        </div>
+                            <span>Download PDF</span>
+                        </a>
                     </div>
                 </div>
 

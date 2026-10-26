@@ -9,6 +9,13 @@ const certifications = [
     link: "#"
   },
   {
+    name: "AWS Certified Cloud Practitioner (CLF-C02)",
+    issuer: "Amazon Web Services",
+    date: "Certified",
+    icon: "⚡",
+    link: "#"
+  },
+  {
     name: "Google AI Essentials",
     issuer: "Coursera",
     date: "2024",

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const resumeData = "Ruchit Dwara is an aspiring Cloud Solutions Engineer from Hyderabad, India. He is a B.Tech CS & IT student at KLH expected Nov 2028 and is building skills in Microsoft Azure, AWS, Linux, networking fundamentals, HTML, CSS, JavaScript, SQL, MySQL, Git, GitHub, Python, Java, and C. Certifications include Azure AI Fundamentals (AI-900), Google AI Essentials, and Git and GitHub Certification, with AZ-900 in progress. He lived in the United States for seven years and communicates well with both technical and business audiences.";
+const resumeData = "Ruchit Dwara is an aspiring Cloud Solutions Engineer from Hyderabad, India. He is a B.Tech CS & IT student at KLH expected Nov 2028 and is skilled in Microsoft Azure, AWS, Linux, networking fundamentals, HTML, CSS, JavaScript, SQL, MySQL, Git, GitHub, Python, Java, and C. Certifications include AWS Certified Cloud Practitioner, Azure AI Fundamentals (AI-900), NVIDIA Accelerated Data Science, Google AI Essentials, and Git and GitHub Certification, with AZ-900 in progress. He lived in the United States for seven years and communicates well with both technical and business audiences.";
 
 async function getAIResponse(query) {
   const apiKey = ""; // Runtime provided
